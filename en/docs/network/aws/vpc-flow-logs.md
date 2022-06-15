@@ -1,10 +1,12 @@
 ---
-services: "network"
+services: 
+  - "network"
+  - "monitor"
 providers: "aws"
 categories: 
-  - "network monitoring"
-domain:
+  "network monitor"
+domains:
  - "virtual network"
 title: "AWS VPC Flow Logs"
-linkTitle: "AWS PrivateLink"
+linkTitle: "AWS VPC Flow Logs"
 ---

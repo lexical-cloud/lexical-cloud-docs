@@ -2,8 +2,11 @@
 services: "ai"
 providers: "azure"
 categories:
-  - "conversational interface"
+  - "language"
+  - "speech"
   - "serverless"
+features:
+  - "conversational interface"
 title: "Azure Bot Service"
 linkTitle: "Azure Bot Service"
 ---

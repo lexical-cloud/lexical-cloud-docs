@@ -1,5 +1,7 @@
 ---
-services: "migration"
+services: 
+  - "migration"
+  - "database"
 providers: "aws"
 categories:
   - "database migration"

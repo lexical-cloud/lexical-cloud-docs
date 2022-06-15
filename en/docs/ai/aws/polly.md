@@ -2,8 +2,10 @@
 services: "ai"
 providers: "aws"
 categories:
-  - "text-to-speech"
+  - "speech"
   - "serverless"
+features:
+  - "text-to-speech"
 title: "Amazon Polly"
 linkTitle: "Amazon Polly"
 ---

@@ -2,7 +2,7 @@
 services: "security"
 providers: "aws"
 categories:
-  - "firewall"
+  - "web application firewall"
 title: "AWS WAF - Web Application Firewall"
 linkTitle: "AWS WAF"
 ---

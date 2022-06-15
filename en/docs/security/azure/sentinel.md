@@ -3,6 +3,6 @@ services: "security"
 providers: "azure"
 categories:
   - "siem"
-title: "Azure Sentinel"
-linkTitle: "Azure Sentinel"
+title: "Microsoft Sentinel"
+linkTitle: "Microsoft Sentinel"
 ---

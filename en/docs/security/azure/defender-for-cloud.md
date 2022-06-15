@@ -4,6 +4,6 @@ providers: "azure"
 categories:
   - "security monitoring"
   - "auditing"
-title: "Azure Security Center"
-linkTitle: "Azure Security Center"
+title: "Microsoft Defender for Cloud"
+linkTitle: "Microsoft Defender for Cloud"
 ---

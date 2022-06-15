@@ -2,8 +2,8 @@
 services: "network"
 providers: "aws"
 categories: 
-  - "network iterface"
-domain:
+  - "network interface"
+domains:
   - "private network" 
 title: "AWS VPC Endpoint"
 linkTitle: "AWS VPC Endpoint"

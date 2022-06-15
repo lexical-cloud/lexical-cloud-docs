@@ -2,8 +2,10 @@
 services: "ai"
 providers: "aws"
 categories:
-  - "conversational interface"
+  - "language"
   - "serverless"
+features:
+  - "conversational interface"
 title: "Amaxon Lex"
 linkTitle: "Amazon Lex"
 ---

@@ -4,12 +4,14 @@ This content is a crosswalk of cloud vocabulary from various cloud providers thr
 
 | Metadata Name | Data Type       | Description     | Examples |
 | ------------- | --------------- | --------------- | -------- |
-| Providers     | String          | Cloud Provider  | aws, azure, gcp |
-| Services      | List of Strings | Type of Service | compute, database, network |
-| Domains       | List of Strings | Subject of Service | virtual machines |
-| Categories    | List of Strings | Category of Service | caching, nosql db, serverless |
-| Features      | List of Strings | Feature of Service | agentless |
-| Labels        | List of Strings | Additional labeling | deprecated |
+| title         | String          | Long name       | Database |
+| linkTitle     | String          | Short name      | DB |
+| providers     | String          | Cloud Provider  | aws, azure, gcp |
+| services      | List of Strings | Type of Service | compute, database, network |
+| domains       | List of Strings | Subject of Service | virtual machines |
+| categories    | List of Strings | Category of Service | caching, nosql db, serverless |
+| features      | List of Strings | Feature of Service | agentless |
+| labels        | List of Strings | Additional labeling | deprecated |
 
 Note: align with existing metadata values where possible
 

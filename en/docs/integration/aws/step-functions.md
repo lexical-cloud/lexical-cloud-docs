@@ -2,9 +2,10 @@
 services: "integration"
 providers: "aws"
 categories:
-  - "low-code"
   - "workflow"
   - "serverless"
+labels:
+  - "low-code"
 title: "AWS Step Functions"
 linkTitle: "AWS Step Functions"
 ---

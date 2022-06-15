@@ -9,5 +9,5 @@ linkTitle: Lexical.cloud
  * Google, Google Cloud, and associated products are trademarks of Google LLC.
  * Microsoft Azure and associated products are trademarks of the Microsoft group of companies.
 
-Lexical cloud relates the product names of cloud providers. No relationship exist with any provider.
+Lexical.cloud relates the product names of cloud providers. No relationship exist with any provider.
 {{< /alert >}}
