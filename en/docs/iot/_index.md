@@ -1,6 +1,6 @@
 ---
 service: network
-title: "Network"
-linkTitle: "Network"
+title: "IoT"
+linkTitle: "IoT"
 weight: 2
 ---

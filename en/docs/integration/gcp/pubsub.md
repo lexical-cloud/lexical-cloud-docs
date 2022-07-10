@@ -1,11 +1,11 @@
 ---
 services: "integration"
-providers: "azure"
+providers: "gcp"
 categories:
   - "eventing"
   - "message queue"
   - "pub-sub"
   - "serverless"
-title: "Azure Service Bus"
-linkTitle: "Azure Service Bus"
+title: "Google Cloud Pub/Sub"
+linkTitle: "Google Cloud Pub/Sub"
 ---

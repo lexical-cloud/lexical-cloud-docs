@@ -1,16 +1,15 @@
 ---
 services: "database"
-providers: "aws"
+providers: "gcp"
 categories:
   - "relational db"
   - "sql compliant"
-  - "serverless"
 features:
   - "mysql"
   - "postgresql"
+  - "sql server"
 label:
   - "rds managed"
-  - "global scale"
-title: "Amazon Aurora"
-linkTitle: "Amazon Aurora"
+title: "Google Cloud SQL"
+linkTitle: "Google Cloud SQL"
 ---
