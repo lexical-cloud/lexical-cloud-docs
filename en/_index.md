@@ -3,6 +3,12 @@ title: Lexical.cloud
 linkTitle: Lexical.cloud
 ---
 
+{{% pageinfo %}}
+### Under Construction!
+
+Thanks for your patience as this project begins :)
+{{% /pageinfo %}}
+
 #### The Challenge
 
 Cloud computing is a vast domain with offerings from many providers. 
