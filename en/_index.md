@@ -6,7 +6,9 @@ linkTitle: Lexical.cloud
 {{% pageinfo %}}
 ### Under Construction!
 
-Thanks for your patience as this project begins :)
+Thanks for your patience as this project begins :) 
+Find out what's coming next in our [projects on Github](https://github.com/orgs/lexical-cloud/projects).
+For the best experience and editing capabilities, use a large display to navigate this site until it improves.   
 {{% /pageinfo %}}
 
 #### The Challenge
@@ -28,7 +30,7 @@ Cross-reference products and capabilities of many cloud providers.
 
 Contributions from the community are welcome.
   - Add content as pull request to [Github Repos](https://github.com/lexical-cloud)
-  - Submit ideas or issues for existing content
+  - Submit [ideas or issues](https://github.com/lexical-cloud/lexical-cloud-docs-hugo/issues/) for existing content
   - Spread word about this project
 
 {{< alert title="Attribution" >}}
