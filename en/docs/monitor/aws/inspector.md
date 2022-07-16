@@ -1,10 +1,13 @@
 ---
-services: "monitor"
-providers: "aws"
+services:
+  - "monitor"
+providers:
+  - "aws"
+domains:
+  - "virtualization"
 categories:
   - "vulnerability management"
   - "assessment"
-domains: "virtual machines"
 features: "agent-based"
 title: "Amazon Inspector"
 linkTitle: "Amazon Inspector"

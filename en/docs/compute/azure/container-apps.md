@@ -1,6 +1,10 @@
 ---
-services: "compute"
-providers: "azure"
+services:
+  - "compute"
+providers:
+  - "azure"
+domains:
+  - "containerization"
 categories:
   - "container orchestrator"
   - "serverless"

@@ -1,9 +1,12 @@
 ---
-services: "developer-tool"
-providers: "aws"
+services:
+  - "developer-tool"
+providers:
+  -  "aws"
+domains:
+  - "virtualization"
 categories:
   - "configuration management"
-domains: "virtual machines"
 title: "AWS OpsWorks"
 linkTitle: "AWS OpsWorks"
 ---
