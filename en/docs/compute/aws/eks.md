@@ -6,6 +6,7 @@ providers:
 domains:
   - "containerization"
 categories:
+  - "container orchestrator"
   - "kubernetes"
 title: "Amazon Elastic Kubernetes Service"
 linkTitle: "Amazon EKS"

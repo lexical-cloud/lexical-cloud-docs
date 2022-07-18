@@ -6,7 +6,8 @@ providers:
 domains:
   - "containerization"
 categories:
-  -  "kubernetes"
+  - "container orchestrator"
+  - "kubernetes"
 title: "Google Kubernetes Engine"
 linkTitle: "Google Kubernetes Engine"
 ---
