@@ -1,6 +1,10 @@
 ---
-services: "governance"
-providers: "aws"
+services:
+  - "governance"
+providers:
+  - "aws"
+domains:
+  - "systems management"
 categories:
   - "cost management"
 features:

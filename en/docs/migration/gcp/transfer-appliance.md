@@ -1,10 +1,12 @@
 ---
-services: "migration"
-providers: "gcp"
+services:
+  - "migration"
+providers:
+  - "gcp"
+domains:
+  - "modernization"
 categories:
   - "data transfer"
-labels:
-  - "modernization"
 title: "Google Cloud Transfer Appliance"
 linkTitle: "Google Cloud Transfer Appliance"
 ---

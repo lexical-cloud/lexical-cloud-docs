@@ -2,11 +2,12 @@
 services:
   - "security"
   - "network"
-providers: "azure"
+providers:
+  - "azure"
+domains:
+  - "connectivity"
 categories: 
   - "firewall"
-domains:
-  - "virtual network" 
 title: "Azure Firewall"
 linkTitle: "Azure Firewall"
 ---

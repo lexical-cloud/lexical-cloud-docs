@@ -1,6 +1,10 @@
 ---
-services: "migration"
-providers: "aws"
+services:
+  - "migration"
+providers:
+  - "aws"
+domains:
+  - "systems management"
 categories:
   - "disaster recovery"
 title: "AWS Elastic Disaster Recovery"

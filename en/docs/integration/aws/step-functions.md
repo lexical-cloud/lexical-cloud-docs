@@ -1,11 +1,14 @@
 ---
-services: "integration"
-providers: "aws"
-categories:
-  - "workflow"
+services:
+  - "integration"
+providers:
+  - "aws"
+domains:
   - "serverless"
-labels:
   - "low-code"
+  - "process modeling"
+categories:
+  - "workflow engine"
 title: "AWS Step Functions"
 linkTitle: "AWS Step Functions"
 ---

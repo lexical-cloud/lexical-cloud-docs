@@ -1,9 +1,12 @@
 ---
-services: "network"
-providers: "aws"
+services:
+  - "network"
+providers:
+  - "aws"
+domains:
+  - "connectivity"
 categories: 
   - "network transit hub"
-domains:
   - "virtual network" 
 title: "AWS Transit Gateway"
 linkTitle: "AWS Transit Gateway"

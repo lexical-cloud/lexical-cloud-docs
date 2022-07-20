@@ -1,10 +1,12 @@
 ---
-services: "framework"
-providers: "azure"
+services:
+  - "framework"
+providers:
+  - "azure"
+domains:
+  - "modernization"
 categories:
   - "decision making"
-labels:
-  - "modernization"
 title: "Azure Cloud Adoption Framework"
 linkTitle: "Azure Cloud Adoption Framework"
 ---

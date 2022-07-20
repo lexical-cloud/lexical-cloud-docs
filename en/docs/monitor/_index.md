@@ -1,6 +1,5 @@
 ---
-service: monitoring
-title: "Monitoring"
-linkTitle: "Monitoring"
+title: "Monitor"
+linkTitle: "Monitor"
 weight: 2
 ---

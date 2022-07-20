@@ -1,12 +1,13 @@
 ---
 services: "integration"
 providers: "gcp"
+domains:
+  - "api lifecycle"
+  - "serverless"
 categories:
   - "api management"
-  - "api lifecycle"
   - "api portal"
-  - "serverless"
-domain:
+features:
   - "rest api"
   - "http api"
   - "websocket api"

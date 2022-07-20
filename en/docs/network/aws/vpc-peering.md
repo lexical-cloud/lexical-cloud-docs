@@ -1,10 +1,12 @@
 ---
-services: "network"
-providers: "aws"
+services:
+  - "network"
+providers:
+  - "aws"
+domains:
+  - "connectivity" 
 categories: 
   - "virtual network"
-domains:
-  - "virtual network" 
 title: "AWS VPC Peering"
 linkTitle: "AWS VPC Peering"
 ---

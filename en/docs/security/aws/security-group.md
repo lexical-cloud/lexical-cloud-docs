@@ -2,11 +2,12 @@
 services:
   - "security"
   - "compute"
-providers: "aws"
+providers:
+  - "aws"
+domains:
+  - "virtualization" 
 categories: 
   - "firewall"
-domains:
-  - "virtual machines" 
 features:
   - "stateful"
 title: "Amazon EC2 Security Group"

@@ -1,10 +1,12 @@
 ---
-services: "migration"
-providers: "aws"
+services:
+  - "migration"
+providers:
+  - "aws"
+domains:
+  - "modernization"
 categories:
   - "application discovery"
-labels:
-  - "modernization"
 title: "AWS Application Discovery Service"
 linkTitle: "AWS Application Discovery Service"
 ---

@@ -1,9 +1,13 @@
 ---
-services: "compute"
-providers: "gcp"
+services:
+  - "compute"
+providers:
+  - "gcp"
+domains:
+  - "containerization"
+  - "serverless"
 categories:
   - "container orchestrator"
-  - "serverless"
 title: "Google Cloud Run"
 linkTitle: "Google Cloud Run"
 ---

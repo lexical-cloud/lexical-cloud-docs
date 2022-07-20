@@ -2,11 +2,12 @@
 services:
   - "security"
   - "network"
-providers: "aws"
+providers:
+  - "aws"
+domains:
+  - "connectivity"
 categories: 
   - "firewall"
-domains:
-  - "virtual network" 
 title: "AWS Network Firewall"
 linkTitle: "AWS Network Firewall"
 ---

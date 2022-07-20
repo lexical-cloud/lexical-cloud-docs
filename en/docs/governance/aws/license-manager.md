@@ -1,9 +1,12 @@
 ---
-services: "governance"
-providers: "aws"
+services:
+  - "governance"
+providers:
+  - "aws"
+domains:
+  - "virtualization"
 categories:
   - "license management"
-domains: "virtual machines"
 title: "AWS License Manager"
 linkTitle: "AWS License Manager"
 ---

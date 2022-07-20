@@ -1,6 +1,10 @@
 ---
-services: "governance"
-providers: "azure"
+services:
+  - "governance"
+providers:
+  - "azure"
+domains:
+  - "systems management"
 categories:
   - "resource management"
 features:

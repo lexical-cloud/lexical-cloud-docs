@@ -1,9 +1,12 @@
 ---
-services: "network"
-providers: "gcp"
+services:
+  - "network"
+providers:
+  - "gcp"
+domains:
+  - "connectivity"
 categories: 
   - "network address translation"
-domains:
   - "private network" 
 title: "Google Cloud NAT"
 linkTitle: "Google Cloud NAT"

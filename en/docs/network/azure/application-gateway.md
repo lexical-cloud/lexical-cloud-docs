@@ -1,12 +1,14 @@
 ---
-services: "network"
-providers: "azure"
+services:
+  - "network"
+providers:
+  - "azure"
+domains:
+  - "connectivity"
 categories: 
   - "load balancer"
   - "application load balancer"
   - "web application firewall"
-domains:
-  - "virtual network"
 title: "Azure Application Gateway" 
 linkTitle: "Azure Application Gateway"
 ---

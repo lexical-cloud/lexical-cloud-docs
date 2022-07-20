@@ -2,7 +2,10 @@
 services:
   - "storage"
   - "hybrid"
-providers: "aws"
+providers:
+  - "aws"
+domains:
+  - "systems management"
 categories:
   - "data management"
 title: "AWS Backup"

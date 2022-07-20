@@ -1,9 +1,13 @@
 ---
-services: "compute"
-providers: "aws"
+services:
+  - "compute"
+providers:
+  - "aws"
+domains:
+  - "containerization"
+  - "serverless"
 categories:
   - "container orchestrator"
-  - "serverless"
 title: "AWS Fargate"
 linkTitle: "AWS Fargate"
 ---

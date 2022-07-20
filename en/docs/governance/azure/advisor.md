@@ -1,8 +1,12 @@
 ---
-services: "governance"
-providers: "azure"
+services:
+  - "governance"
+providers:
+  - "azure"
+domains:
+  - "systems management"
 categories:
-  - "assessment"
+  - "risk assessment"
   - "best practices"
 title: "Azure Advisor"
 linkTitle: "Azure Advisor"

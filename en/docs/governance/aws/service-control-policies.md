@@ -1,9 +1,12 @@
 ---
-services: "governance"
-providers: "aws"
+services:
+  - "governance"
+providers:
+  - "aws"
+domains:
+  - "systems management"
 categories:
   - "access management"
-domains: "account management"
 title: "AWS Service Control Policies"
 linkTitle: "AWS Service Control Policies"
 ---

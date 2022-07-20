@@ -1,6 +1,10 @@
 ---
-services: "hybrid"
-providers: "gcp"
+services:
+  - "hybrid"
+providers:
+  - "gcp"
+domains:
+  - "architecture"
 categories:
   - "on-premises"
   - "multi-cloud"

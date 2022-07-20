@@ -1,6 +1,10 @@
 ---
-services: "identity"
-providers: "aws"
+services:
+  - "identity"
+providers:
+  - "aws"
+domains:
+  - "systems management"
 categories:
   - "identity management"
   - "access management"

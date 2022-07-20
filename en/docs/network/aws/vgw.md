@@ -1,10 +1,13 @@
 ---
-services: "network"
-providers: "aws"
+services:
+  - "network"
+providers:
+  - "aws"
 categories: 
   - "network interface"
+  - "private network"
 domains:
-  - "private network" 
+  - "connectivity" 
 title: "AWS Virtual Private Gateway"
 linkTitle: "AWS Virtual Private Gateway"
 ---

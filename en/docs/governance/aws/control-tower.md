@@ -1,9 +1,13 @@
 ---
-services: "governance"
-providers: "aws"
+services:
+  - "governance"
+providers:
+  - "aws"
+domains:
+  - "systems management"
 categories:
   - "compliance"
-  - "account management"
+  - "resource management"
 title: "AWS Control Tower"
 linkTitle: "AWS Control Tower"
 ---
