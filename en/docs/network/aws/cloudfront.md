@@ -1,6 +1,10 @@
 ---
-services: "network"
-providers: "aws"
+services:
+  - "network"
+providers:
+  - "aws"
+domains:
+  - "architecture"
 categories: 
   - "content delivery"
 title: "Amazon Cloudfront"

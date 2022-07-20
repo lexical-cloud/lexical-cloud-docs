@@ -2,11 +2,12 @@
 services: 
   - "network"
   - "monitor"
-providers: "azure"
-categories:
-  "network monitor"
+providers:
+  - "azure"
 domains:
- - "virtual network"
+  - "connectivity"
+categories:
+  - "network monitor"
 title: "Azure Network Watcher"
 linkTitle: "Azure Network Watcher"
 ---

@@ -1,6 +1,10 @@
 ---
-services: "hybrid"
-providers: "aws"
+services:
+  - "hybrid"
+providers:
+  - "aws"
+domains:
+  - "architecture"
 categories:
   - "on-premises"
   - "edge locations"

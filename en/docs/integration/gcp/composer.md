@@ -1,9 +1,13 @@
 ---
-services: "integration"
-providers: "gcp"
-categories:
-  - "workflow"
+services:
+  - "integration"
+providers:
+  - "gcp"
+domains:
   - "serverless"
+  - "process modeling"
+categories:
+  - "workflow engine"
 labels:
   - "multi-cloud"
 title: "Google Cloud Composer"

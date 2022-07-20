@@ -5,9 +5,10 @@ providers:
   - "aws"
 domains:
   - "virtualization"
+  - "systems management"
 categories:
   - "vulnerability management"
-  - "assessment"
+  - "risk assessment"
 features: "agent-based"
 title: "Amazon Inspector"
 linkTitle: "Amazon Inspector"

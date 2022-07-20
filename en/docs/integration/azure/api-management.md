@@ -1,10 +1,12 @@
 ---
 services: "integration"
 providers: "azure"
+domains:
+  - "serverless"
+  - "api lifecycle"
 categories:
   - "api management"
-  - "serverless"
-domain:
+features:
   - "rest api"
   - "http api"
   - "websocket api"

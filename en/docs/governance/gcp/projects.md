@@ -1,6 +1,10 @@
 ---
-services: "governance"
-providers: "gcp"
+services:
+  - "governance"
+providers:
+  - "gcp"
+domains:
+  - "systems management"
 categories:
   - "resource management"
 features:

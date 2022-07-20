@@ -1,13 +1,15 @@
 ---
 services: 
- - "database"
- - "analytics"
-providers: "gcp"
-categories:
+  - "database"
+  - "analytics"
+providers:
+  - "gcp"
+domains:
+  - "serverless"
   - "big data"
+categories:
   - "unstructured data"
   - "sql compliant"
-  - "serverless"
 title: "Google Cloud BigQuery"
 linkTitle: "Google Cloud BigQuery"
 ---

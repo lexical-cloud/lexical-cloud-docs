@@ -6,7 +6,9 @@ providers:
 domains:
   - "containerization"
 categories:
-  - "container management"
+  - "container orchestrator"
+features:
+  - "managed service"
 title: "Azure Container Instances"
 linkTitle: "Azure Container Instances"
 ---

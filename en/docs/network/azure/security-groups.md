@@ -1,10 +1,12 @@
 ---
-services: "network"
-providers: "azure"
+services:
+  - "network"
+providers:
+  - "azure"
+domains:
+  - "connectivity"
 categories: 
   - "firewall"
-domains:
-  - "virtual network" 
 features:
   - "stateful"
 title: "Azure Network Security Group"

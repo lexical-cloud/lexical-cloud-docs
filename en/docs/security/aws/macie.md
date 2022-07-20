@@ -1,9 +1,13 @@
 ---
-services: "security"
-providers: "aws"
+services:
+  - "security"
+providers:
+  - "aws"
+domains:
+  - "systems management"
 categories:
   - "data privacy"
-  - "assessment"
+  - "risk assessment"
 title: "Amazon Macie"
 linkTitle: "Amazon Macie"
 ---

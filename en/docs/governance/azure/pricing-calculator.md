@@ -1,6 +1,8 @@
 ---
 services: "governance"
 providers: "azure"
+domains:
+  - "systems management"
 categories:
   - "cost management"
 features:

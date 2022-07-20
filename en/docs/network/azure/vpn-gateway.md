@@ -1,9 +1,12 @@
 ---
-services: "network"
-providers: "azure"
+services:
+  - "network"
+providers:
+  - "azure"
+domains:
+  - "connectivity"
 categories: 
   - "network interface"
-domains:
   - "private network" 
 title: "Azure VPN Gateway"
 linkTitle: "Azure VPN Gateway"

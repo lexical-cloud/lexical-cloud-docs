@@ -1,7 +1,12 @@
 ---
-services: "database"
-providers: "azure"
-categories: "caching"
+services:
+  - "database"
+providers:
+  - "azure"
+domains:
+  - "architecture"
+categories:
+  - "caching"
 title: "Azure Cache for Redis"
 linkTitle: "Amazon Cache for Redis"
 ---

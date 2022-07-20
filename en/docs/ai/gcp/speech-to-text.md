@@ -1,6 +1,8 @@
 ---
-services: "ai"
-providers: "azure"
+services:
+  - "ai"
+providers:
+  - "gcp"
 categories:
   - "machine learning"
   - "serverless"

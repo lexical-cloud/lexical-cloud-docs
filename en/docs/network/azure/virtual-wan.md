@@ -1,9 +1,12 @@
 ---
-services: "network"
-providers: "azure"
+services:
+  - "network"
+providers:
+  - "azure"
+domains:
+  - "connectivity"
 categories: 
   - "network transit hub"
-domains:
   - "virtual network" 
 title: "Azure Virtual WAN"
 linkTitle: "Azure Virtual WAN"

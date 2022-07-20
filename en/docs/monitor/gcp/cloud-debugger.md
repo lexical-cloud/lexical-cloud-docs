@@ -1,6 +1,8 @@
 ---
 services: "monitor"
 providers: "gcp"
+domains:
+  - "systems management"
 categories:
   - "observability"
   - "application debugger"

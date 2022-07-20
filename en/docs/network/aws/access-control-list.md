@@ -1,10 +1,12 @@
 ---
-services: "network"
-providers: "aws"
+services:
+  - "network"
+providers:
+  - "aws"
+domains:
+  - "connectivity"
 categories: 
   - "firewall"
-domains:
-  - "virtual network" 
 features:
   - "stateless"
 title: "AWS Network Access Control List"

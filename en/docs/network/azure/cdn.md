@@ -1,6 +1,10 @@
 ---
-services: "network"
-providers: "azure"
+services:
+  - "network"
+providers:
+  - "azure"
+domains:
+  - "architecture"
 categories: 
   - "content delivery"
 title: "Azure CDN"

@@ -2,11 +2,12 @@
 services:
   - "security"
   - "network"
-providers: "gcp"
+providers:
+  - "gcp"
+domains:
+  - "connectivity"
 categories: 
   - "firewall"
-domains:
-  - "virtual network" 
 title: "Google Cloud Firewall"
 linkTitle: "Google Cloud Firewall"
 ---

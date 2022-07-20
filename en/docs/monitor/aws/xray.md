@@ -1,6 +1,10 @@
 ---
-services: "monitor"
-providers: "aws"
+services:
+  - "monitor"
+providers:
+  - "aws"
+domains:
+  - "systems management"
 categories:
   - "application debugger"
   - "root cause analysis"
