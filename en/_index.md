@@ -39,6 +39,7 @@ Contributions from the community are welcome.
  * GitHub and associated products are trademarks of GitHub, Inc.
  * Google, Google Cloud, and associated products are trademarks of Google LLC.
  * Microsoft Azure and associated products are trademarks of the Microsoft group of companies.
+ * Wikipedia is a registered trademark of the Wikimedia Foundation, Inc., a non-profit organization.
 
 Lexical.cloud is not affiliated with or otherwise sponsored by any of the above organizations. No relationship is implied or intended by references or links to their content. Please [file an issue](https://github.com/lexical-cloud/lexical-cloud-docs/issues/) to report any discrepancy. 
 {{< /alert >}}
