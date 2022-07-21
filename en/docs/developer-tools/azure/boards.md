@@ -1,10 +1,12 @@
 ---
-services: "developer tools"
-providers: "azure"
+services:
+  - "developer tools"
+providers:
+  - "azure"
+domains:
+  - "developer toolchain"
 categories:
   - "project planning"
-domains:
-  - "devops"
 title: "Azure Boards"
 linkTitle: "Azure Boards"
 ---

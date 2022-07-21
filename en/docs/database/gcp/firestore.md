@@ -1,10 +1,13 @@
 ---
-services: "database"
-providers: "gcp"
-categories:
+services:
+  - "database"
+providers:
+  - "gcp"
+domains:
   - "nosql db"
-  - "document db"
   - "serverless"
+categories:
+  - "document db"
 title: "Google Cloud Firestore"
 linkTitle: "Google Cloud Firestore"
 ---

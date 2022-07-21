@@ -1,9 +1,13 @@
 ---
-services: "ai"
-providers: "aws"
+services:
+  - "ai"
+providers:
+  - "aws"
+domains:
+  - "machine learning"
+  - "serverless"
 categories:
   - "speech"
-  - "serverless"
 features:
   - "text-to-speech"
 title: "Amazon Polly"

@@ -3,12 +3,12 @@ services:
   - "developer tools"
 providers:
   - "github"
+domains:
+  - "developer toolchain"
 categories:
   - "source control"
   - "project planning"
-domains:
-  - "devops"
-feature:
+features:
   - "community"
 title: "Github"
 linkTitle: "Github"

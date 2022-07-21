@@ -1,9 +1,6 @@
 ---
-services: "ai"
-providers: "azure"
-categories:
-  - "machine learning"
-  - "serverless"
-title: "Azure Machine Learning"
-linkTitle: "Azure ML"
+title: "Machine Learning (ML)"
+linkTitle: "machine learning"
+services:
+  - "ai"
 ---

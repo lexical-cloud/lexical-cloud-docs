@@ -1,9 +1,12 @@
 ---
-services: "ai"
-providers: "gcp"
-categories:
+services:
+  - "ai"
+providers:
+  - "gcp"
+domains:
   - "machine learning"
   - "serverless"
+categories:
   - "vision"
 features:
   - "visual identification"

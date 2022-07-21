@@ -5,9 +5,9 @@ providers:
   - "aws"
 domains:
   - "architecture"
+  - "edge computing"
 categories:
   - "on-premises"
-  - "edge locations"
 title: "AWS Outposts"
 linkTitle: "AWS Outposts"
 ---

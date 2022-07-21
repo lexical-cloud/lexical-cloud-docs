@@ -1,6 +1,10 @@
 ---
-services: "security"
-providers: "aws"
+services:
+  - "security"
+providers:
+  - "aws"
+domains:
+  - "systems management"
 categories:
   - "ddos protection"
 title: "AWS Shield"

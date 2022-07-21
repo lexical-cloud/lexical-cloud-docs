@@ -1,10 +1,14 @@
 ---
-services: "ai"
-providers: "azure"
+services:
+  - "ai"
+providers:
+  - "azure"
+domains:
+  - "machine learning"
+  - "serverless"
 categories:
   - "language"
   - "speech"
-  - "serverless"
 features:
   - "conversational interface"
 labels:

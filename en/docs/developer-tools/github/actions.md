@@ -8,7 +8,6 @@ domains:
 categories:
   - "continuous delivery"
   - "continuous integration"
-  - "developer toolchain"
 title: "Github Actions"
 linkTitle: "Github Actions"
 ---

@@ -1,9 +1,13 @@
 ---
-services: "ai"
-providers: "aws"
+services:
+  - "ai"
+providers:
+  - "aws"
+domains:
+  - "machine learning"
+  - "serverless"
 categories:
   - "language"
-  - "serverless"
 features:
   - "conversational interface"
 title: "Amaxon Lex"

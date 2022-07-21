@@ -1,11 +1,14 @@
 ---
-services: "database"
-providers: "aws"
-categories:
+services:
+  - "database"
+providers:
+  - "aws"
+domains:
   - "nosql db"
+  - "serverless"
+categories:
   - "key-value store"
   - "document db"
-  - "serverless"
 title: "Amazon DynamoDB"
 linkTitle: "Amazon DynamoDB"
 ---

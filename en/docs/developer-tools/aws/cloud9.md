@@ -4,7 +4,7 @@ services:
 providers:
   - "aws"
 domains:
-  - "devops"
+  - "developer toolchain"
 categories:
   - "hosted ide"
 title: "AWS Cloud9"

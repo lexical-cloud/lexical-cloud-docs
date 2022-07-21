@@ -3,9 +3,10 @@ services:
   - "ai"
 providers:
   - "gcp"
-categories:
+domains:
   - "machine learning"
   - "serverless"
+categories:
   - "speech"
 features:
   - "speech-to-text"

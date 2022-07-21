@@ -4,7 +4,7 @@ services:
 providers:
   - "aws"
 domains:
-  - "systems management"
+  - "data management"
 categories:
   - "data privacy"
   - "risk assessment"

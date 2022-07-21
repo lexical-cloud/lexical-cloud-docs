@@ -5,9 +5,11 @@ services:
 providers:
   - "gcp"
 domains:
-  - "serverless"
   - "big data"
+  - "data management"
+  - "serverless"
 categories:
+  - "data warehousing"
   - "unstructured data"
   - "sql compliant"
 title: "Google Cloud BigQuery"

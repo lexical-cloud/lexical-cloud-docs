@@ -1,9 +1,12 @@
 ---
-services: "ai"
-providers: "azure"
-categories:
+services:
+  - "ai"
+providers:
+  - "azure"
+domains:
   - "machine learning"
-  - "decision"
+categories:
+  - "decision making"
 features:
   - "personalization"
   - "recommendations"

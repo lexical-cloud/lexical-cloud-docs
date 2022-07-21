@@ -1,7 +1,12 @@
 ---
-services: "network"
-providers: "azure"
-categories: "domain name system"
+services:
+  - "network"
+providers:
+  - "azure"
+domains:
+  - "systems management"
+categories:
+  - "domain name system"
 features:
   - "dns management"
 title: "Azure DNS"

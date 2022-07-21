@@ -1,10 +1,14 @@
 ---
-services: "ai"
-providers: "gcp"
+services:
+  - "ai"
+providers:
+  - "gcp"
+domains:
+  - "machine learning"
+  - "serverless"
 categories:
   - "language"
   - "speech"
-  - "serverless"
 features:
   - "conversational interface"
 title: "Google Cloud Dialogflow"

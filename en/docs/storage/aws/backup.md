@@ -7,7 +7,7 @@ providers:
 domains:
   - "systems management"
 categories:
-  - "data management"
+  - "data protection"
 title: "AWS Backup"
 linkTitle: "AWS Backup"
 ---

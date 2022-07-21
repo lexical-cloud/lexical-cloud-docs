@@ -1,6 +1,10 @@
 ---
-services: "migration"
-providers: "aws"
+services:
+  - "migration"
+providers:
+  - "aws"
+domains:
+  - "data management"
 categories:
   - "database migration"
   - "schema translator"

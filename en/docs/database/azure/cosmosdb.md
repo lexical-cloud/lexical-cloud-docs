@@ -1,10 +1,13 @@
 ---
-services: "database"
-providers: "azure"
-categories:
+services:
+  - "database"
+providers:
+  - "azure"
+domains:
   - "nosql db"
-  - "document db"
   - "serverless"
+categories:
+  - "document db"
 title: "Azure Cosmos DB"
 linkTitle: "Azure Cosmos DB"
 ---

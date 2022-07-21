@@ -1,7 +1,12 @@
 ---
-services: "network"
-providers: "gcp"
-categories: "domain name system"
+services:
+  - "network"
+providers:
+  - "gcp"
+domains:
+  - "systems management"
+categories:
+  - "domain name system"
 features:
   - "dns management"
 title: "Google Cloud DNS"

@@ -1,6 +1,11 @@
 ---
-services: "developer tools"
-providers: "azure"
+services:
+  - "developer tools"
+providers:
+  - "azure"
+domains:
+  - "devops"
+  - "systems management"
 categories:
   - "infrastructure as code"
   - "deployment management"

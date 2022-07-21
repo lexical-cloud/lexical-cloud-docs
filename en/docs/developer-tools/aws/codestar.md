@@ -4,11 +4,10 @@ services:
 providers:
   - "aws"
 domains:
-  - "devops"
+  - "developer toolchain"
 categories:
   - "continuous delivery"
   - "continuous integration"
-  - "developer toolchain"
 title: "AWS CodeStar"
 linkTitle: "AWS CodeStar"
 ---
