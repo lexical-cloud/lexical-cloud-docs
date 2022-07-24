@@ -4,14 +4,14 @@ services:
 providers:
   - "azure"
 domains:
+  - "end-user computing"
   - "machine learning"
   - "serverless"
 categories:
-  - "language"
+  - "language processing"
+  - "no-code"
 features:
   - "conversational interface"
-labels:
-  - "no-code"
 title: "Microsoft Power Virtual Agents"
 linkTitle: "Microsoft Power Virtual Agents"
 ---

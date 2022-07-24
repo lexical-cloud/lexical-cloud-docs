@@ -7,8 +7,8 @@ domains:
   - "machine learning"
   - "serverless"
 categories:
-  - "language"
-  - "speech"
+  - "language processing"
+  - "speech processing"
 features:
   - "conversational interface"
 title: "Azure Bot Service"

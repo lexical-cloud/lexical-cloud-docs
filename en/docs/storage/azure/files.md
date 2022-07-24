@@ -1,9 +1,13 @@
 ---
-services: "storage"
-providers: "azure"
+services:
+  - "storage"
+providers:
+  - "azure"
+domains:
+  - "data management"
+  - "serverless"
 categories: 
   - "file storage"
-  - "serverless"
 title: "Azure Files"
 linkTitle: "Azure Files"
 ---

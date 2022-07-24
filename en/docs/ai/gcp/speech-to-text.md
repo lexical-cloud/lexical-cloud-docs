@@ -7,7 +7,7 @@ domains:
   - "machine learning"
   - "serverless"
 categories:
-  - "speech"
+  - "speech processing"
 features:
   - "speech-to-text"
   - "prebuilt models"

@@ -1,10 +1,15 @@
 ---
-services: "monitor"
-providers: "azure"
-categories:
+services:
+   "monitor"
+providers:
+   "azure"
+domains:
   - "observability"
-  - "notifications"
+categories:
+  - "telemetry data"
   - "auditing"
+features:
+  - "notifications"
 title: "Azure Monitor"
 linkTitle: "Azure Monitor"
 ---

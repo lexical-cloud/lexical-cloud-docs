@@ -7,7 +7,7 @@ domains:
   - "machine learning"
   - "serverless"
 categories:
-  - "vision"
+  - "computer vision"
 features:
   - "visual identification"
   - "prebuilt models"

@@ -4,10 +4,9 @@ services:
 providers:
   - "gcp"
 domains:
-  - "systems management"
-categories:
   - "identity management"
-  - "access management"
+categories:
+  - "access control"
 title: "Google Cloud Identity and Access Management"
 linkTitle: "Google Cloud IAM"
 ---

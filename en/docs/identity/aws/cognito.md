@@ -1,7 +1,13 @@
 ---
-services: "identity"
-providers: "aws"
+services:
+  - "identity"
+providers:
+  - "aws"
+domains:
+  - "identity management"
 categories:
+  - "identity provider"
+features:
   - "user enrollment"
   - "user authentication"
   - "user authorization"

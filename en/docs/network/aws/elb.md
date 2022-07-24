@@ -1,6 +1,10 @@
 ---
-services: "network"
-providers: "aws"
+services:
+  - "network"
+providers:
+  - "aws"
+domains:
+  - "connectivity"
 categories: 
   - "load balancer"
   - "application load balancer"

@@ -1,6 +1,10 @@
 ---
-services: "iot"
-providers: "azure"
+services:
+  - "iot"
+providers:
+  - "azure"
+domains:
+  - "edge computing"
 categories: 
   - "iot management"
 title: "Azure IoT Central"

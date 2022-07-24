@@ -1,10 +1,13 @@
 ---
-services: "integration"
-providers: "azure"
-categories:
+services:
+  - "integration"
+providers:
+  - "azure"
+domains:
   - "eventing"
-  - "pub-sub"
   - "serverless"
+categories:
+  - "pub-sub"
 title: "Azure Event Grid"
 linkTitle: "Azure Event Grid"
 ---

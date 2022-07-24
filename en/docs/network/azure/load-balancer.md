@@ -1,6 +1,10 @@
 ---
-services: "network"
-providers: "azure"
+services:
+  - "network"
+providers:
+  - "azure"
+domains:
+  - "connectivity"
 categories: 
   - "load balancer"
   - "network load balancer"

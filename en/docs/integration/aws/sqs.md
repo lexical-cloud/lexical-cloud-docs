@@ -1,10 +1,13 @@
 ---
-services: "integration"
-providers: "aws"
-categories:
+services:
+  - "integration"
+providers:
+  - "aws"
+domains:
   - "eventing"
-  - "message queue"
   - "serverless"
+categories:
+  - "message queue"
 title: "Amazon Simple Queue Service"
 linkTitle: "Amazon SQS"
 ---

@@ -2,11 +2,13 @@
 services: 
   - "integration"
   - "storage"
-providers: "azure"
-categories:
+providers:
+  - "azure"
+domains:
   - "eventing"
-  - "message queue"
   - "serverless"
+categories:
+  - "message queue"
 title: "Azure Queue Storage"
 linkTitle: "Azure Queue Storage"
 ---

@@ -1,6 +1,10 @@
 ---
-services: "monitor"
-providers: "azure"
+services:
+  - "monitor"
+providers:
+  - "azure"
+domains:
+  - "observability"
 categories:
   - "health"
 features:

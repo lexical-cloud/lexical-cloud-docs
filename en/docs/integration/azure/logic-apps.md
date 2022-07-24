@@ -4,13 +4,13 @@ services:
 providers:
   - "azure"
 domains:
-  - "serverless"
-  - "low-code"
+  - "end-user computing"
   - "process modeling"
+  - "serverless"
 categories:
-  - "workflow engine"
-labels:
+  - "low-code"
   - "no-code"
+  - "workflow engine"
 title: "Azure Logic Apps"
 linkTitle: "AWS Logic Apps"
 ---

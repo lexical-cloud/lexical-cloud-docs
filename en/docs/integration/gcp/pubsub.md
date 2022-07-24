@@ -1,11 +1,12 @@
 ---
 services: "integration"
 providers: "gcp"
-categories:
+domains:
   - "eventing"
+  - "serverless"
+categories:
   - "message queue"
   - "pub-sub"
-  - "serverless"
 title: "Google Cloud Pub/Sub"
 linkTitle: "Google Cloud Pub/Sub"
 ---

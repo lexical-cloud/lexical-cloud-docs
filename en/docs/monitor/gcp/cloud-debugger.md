@@ -1,10 +1,12 @@
 ---
-services: "monitor"
-providers: "gcp"
+services:
+  - "monitor"
+providers:
+  - "gcp"
 domains:
   - "systems management"
-categories:
   - "observability"
+categories:
   - "application debugger"
   - "root cause analysis"
 labels:

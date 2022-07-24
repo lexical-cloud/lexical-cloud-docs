@@ -1,5 +1,5 @@
 ---
 title: "Infrastructure as Code (IaC)"
-linkTitle: "iac"
+linkTitle: "infrastucture as code"
 definitionLink: "https://glossary.cncf.io/infrastructure-as-code/"
 ---

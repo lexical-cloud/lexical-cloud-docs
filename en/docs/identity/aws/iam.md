@@ -4,10 +4,10 @@ services:
 providers:
   - "aws"
 domains:
-  - "systems management"
-categories:
   - "identity management"
-  - "access management"
+categories:
+  - "access control"
+  - "identity provider"
 title: "AWS Identity and Access Management"
 linkTitle: "AWS IAM"
 ---

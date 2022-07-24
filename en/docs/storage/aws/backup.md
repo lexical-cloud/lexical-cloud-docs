@@ -5,9 +5,10 @@ services:
 providers:
   - "aws"
 domains:
+  - "data management"
   - "systems management"
 categories:
-  - "data protection"
+  - "data security"
 title: "AWS Backup"
 linkTitle: "AWS Backup"
 ---

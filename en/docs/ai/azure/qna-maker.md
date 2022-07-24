@@ -4,15 +4,15 @@ services:
 providers:
   - "azure"
 domains:
+  - "end-user computing"
   - "machine learning"
   - "serverless"
 categories:
-  - "language"
-  - "speech"
+  - "language processing"
+  - "no-code"
+  - "speech processing"
 features:
   - "conversational interface"
-labels:
-  - "no-code"
 title: "Azure QnA Maker"
 linkTitle: "Azure QnA Maker"
 ---

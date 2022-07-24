@@ -1,9 +1,14 @@
 ---
-services: "integration"
-providers: "aws"
+services:
+  - "integration"
+providers:
+  - "aws"
+domains:
+  - "eventing"
+  - "serverless"
 categories:
   - "event bus"
-  - "serverless"
+  - "pub-sub"
 title: "Amazon EventBridge"
 linkTitle: "Amazon EventBridge"
 ---

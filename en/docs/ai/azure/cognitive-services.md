@@ -7,9 +7,9 @@ domains:
   - "machine learning"
   - "serverless"
 categories:
-  - "language"
-  - "speech"
-  - "vision"
+  - "language processing"
+  - "speech processing"
+  - "computer vision"
   - "decision making"
 features:
   - "sentiment analysis"

@@ -7,7 +7,7 @@ domains:
   - "machine learning"
   - "serverless"
 categories:
-  - "language"
+  - "language processing"
 features:
   - "conversational interface"
 title: "Amaxon Lex"

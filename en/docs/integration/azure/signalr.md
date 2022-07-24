@@ -1,11 +1,15 @@
 ---
-services: "integration"
-providers: "azure"
-categories:
+services:
+  - "integration"
+providers:
+  - "azure"
+domains:
   - "eventing"
   - "serverless"
+categories:
+  - "real-time communication"
 features:
-  - "real-time web communication"
+  - "websocket api"
 title: "Azure SignalR Service"
 linkTitle: "Azure SignalR Service"
 ---

@@ -4,9 +4,9 @@ services:
 providers:
   - "azure"
 domains:
-  - "systems management"
+  - "identity management"
 categories:
-  - "access management"
+  - "access control"
 title: "Azure Role Based Access Control"
 linkTitle: "Azure RBAC"
 ---

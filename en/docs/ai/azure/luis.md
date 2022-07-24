@@ -5,7 +5,7 @@ domains:
   - "machine learning"
   - "serverless"
 categories:
-  - "language"
+  - "language processing"
 features:
   - "conversational interface"
 title: "Azure Language Understanding"
