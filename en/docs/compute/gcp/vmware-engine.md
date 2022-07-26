@@ -5,6 +5,7 @@ services:
 providers:
   - "gcp"
 domains:
+  - "managed service"
   - "modernization"
   - "virtualization"
 categories: 

@@ -5,7 +5,7 @@ providers:
   - "gcp"
 domains:
   - "data management"
-  - "serverless"
+  - "managed service"
 categories: 
   - "file storage"
 title: "Google Cloud Filestore"

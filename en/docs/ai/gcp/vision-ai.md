@@ -5,7 +5,6 @@ providers:
   - "gcp"
 domains:
   - "machine learning"
-  - "serverless"
 categories:
   - "computer vision"
 features:

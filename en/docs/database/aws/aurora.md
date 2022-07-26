@@ -5,6 +5,7 @@ providers:
   - "aws"
 domains:
   - "data management"
+  - "managed service"
   - "serverless"
 categories:
   - "relational db"

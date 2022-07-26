@@ -4,7 +4,7 @@ services:
 providers:
   - "azure"
 domains:
-  - "architecture"
+  - "edge computing"
   - "systems management"
 categories: 
   - "content delivery"

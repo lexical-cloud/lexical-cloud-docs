@@ -5,7 +5,7 @@ providers:
   - "gcp"
 domains:
   - "machine learning"
-  - "serverless"
+  - "managed service"
 categories:
   - "model training"
 title: "Google Cloud Vertex AI"

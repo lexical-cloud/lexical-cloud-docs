@@ -4,8 +4,8 @@ services:
 providers:
   - "gcp"
 domains:
-  - "serverless"
   - "process modeling"
+  - "serverless"
 categories:
   - "workflow engine"
 title: "Google Cloud Workflows"

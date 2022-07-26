@@ -5,6 +5,7 @@ providers:
   - "aws"
 domains:
   - "containerization"
+  - "managed service"
 categories:
   - "container orchestrator"
   - "kubernetes"

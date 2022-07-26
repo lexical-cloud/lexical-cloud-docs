@@ -4,7 +4,7 @@ services:
 providers:
   - "azure"
 domains:
-  - "architecture"
+  - "managed service"
 categories:
   - "caching"
 title: "Azure Cache for Redis"

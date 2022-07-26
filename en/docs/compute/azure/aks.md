@@ -4,7 +4,8 @@ services:
 providers:
   - "azure"
 domains:
-  -"containerization"
+  - "containerization"
+  - "managed service"
 categories:
   - "container orchestrator"
   - "kubernetes"

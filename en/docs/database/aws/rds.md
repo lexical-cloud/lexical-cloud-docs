@@ -5,6 +5,7 @@ providers:
   - "aws"
 domains:
   - "data management"
+  - "managed service"
 categories:
   - "relational db"
   - "sql compliant"

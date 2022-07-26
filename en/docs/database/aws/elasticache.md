@@ -4,7 +4,7 @@ services:
 providers:
   - "aws"
 domains:
-  - "architecture"
+  - "managed service"
 categories:
   - "caching"
 title: "Amazon ElastiCache"

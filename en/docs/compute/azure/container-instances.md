@@ -5,10 +5,9 @@ providers:
   - "azure"
 domains:
   - "containerization"
+  - "managed service"
 categories:
   - "container orchestrator"
-features:
-  - "managed service"
 title: "Azure Container Instances"
 linkTitle: "Azure Container Instances"
 ---

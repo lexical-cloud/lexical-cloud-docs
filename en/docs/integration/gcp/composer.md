@@ -4,7 +4,7 @@ services:
 providers:
   - "gcp"
 domains:
-  - "serverless"
+  - "managed service"
   - "process modeling"
 categories:
   - "multi-cloud"

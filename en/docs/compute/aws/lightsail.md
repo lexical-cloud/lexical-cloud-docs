@@ -4,11 +4,10 @@ services:
 providers:
   - "aws"
 domains:
+  - "managed service"
   - "virtualization"
 categories:
   - "virtual private server"
-features:
-  - "managed service"
 title: "Amazon Lightsail"
 linkTitle: "Amazon Lightsail"
 ---

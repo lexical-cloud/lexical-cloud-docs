@@ -4,7 +4,7 @@ services:
 providers:
   - "gcp"
 domains:
-  - "architecture"
+  - "edge computing"
 categories: 
   - "content delivery"
 title: "Google Cloud CDN"

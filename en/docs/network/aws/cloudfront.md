@@ -4,7 +4,7 @@ services:
 providers:
   - "aws"
 domains:
-  - "architecture"
+  - "edge computing"
 categories: 
   - "content delivery"
 title: "Amazon Cloudfront"

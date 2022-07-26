@@ -4,11 +4,9 @@ services:
 providers:
   - "aws"
 domains:
-  - "architecture"
+  - "managed service"
 categories:
   - "paas"
-features:
-  - "managed service"
 title: "AWS Elastic Beanstalk"
 linkTitle: "AWS Elastic Beanstalk"
 ---

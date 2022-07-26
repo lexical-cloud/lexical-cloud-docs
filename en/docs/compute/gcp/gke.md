@@ -5,6 +5,7 @@ providers:
   - "gcp"
 domains:
   - "containerization"
+  - "managed service"
 categories:
   - "container orchestrator"
   - "kubernetes"

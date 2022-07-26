@@ -4,7 +4,7 @@ services:
 providers:
   - "azure"
 domains:
-  - "architecture"
+  - "edge computing"
 categories: 
   - "content delivery"
 title: "Azure CDN"

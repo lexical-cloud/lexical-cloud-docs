@@ -5,6 +5,7 @@ providers:
   - "azure"
 domains:
   - "data management"
+  - "managed service"
   - "serverless"
 categories:
   - "document db"

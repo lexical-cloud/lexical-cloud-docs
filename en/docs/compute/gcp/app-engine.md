@@ -4,11 +4,9 @@ services:
 providers:
   - "gcp"
 domains:
-  - "architecture"
+  - "managed service"
 categories:
   - "paas"
-features:
-  - "managed service"
 title: "Google App Engine"
 linkTitle: "Google App Engine"
 ---
