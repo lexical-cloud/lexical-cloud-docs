@@ -1,10 +1,14 @@
 ---
-services: "governance"
-providers: "azure"
+services:
+  - "governance"
+providers:
+  - "azure"
+domains:
+  - "systems management"
 categories:
+  - "policy management"
   - "resource management"
 features:
-  - "policy assignment"
 title: "Azure Management Groups"
 linkTitle: "Azure Management Groups"
 ---

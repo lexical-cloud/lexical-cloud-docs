@@ -1,9 +1,13 @@
 ---
-services: "identity"
-providers: "aws"
-categories:
+services:
+  - "identity"
+providers:
+  - "aws"
+domains:
   - "identity management"
-  - "access management"
+categories:
+  - "access control"
+  - "identity provider"
 title: "AWS Identity and Access Management"
 linkTitle: "AWS IAM"
 ---

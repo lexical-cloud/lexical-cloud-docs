@@ -1,7 +1,14 @@
 ---
-services: "network"
-providers: "azure"
-categories: "private network"
+services:
+  - "hybrid"
+  - "network"
+providers:
+  - "azure"
+domains:
+  - "connectivity"
+categories:
+  - "on-premises"
+  - "private network"
 title: "Azure ExpressRoute"
 linkTitle: "Azure ExpressRoute"
 ---

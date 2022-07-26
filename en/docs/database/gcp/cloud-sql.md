@@ -1,6 +1,11 @@
 ---
-services: "database"
-providers: "gcp"
+services:
+  - "database"
+providers:
+  - "gcp"
+domains:
+  - "data management"
+  - "managed service"
 categories:
   - "relational db"
   - "sql compliant"

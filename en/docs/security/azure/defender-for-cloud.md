@@ -1,6 +1,10 @@
 ---
-services: "security"
-providers: "azure"
+services:
+  - "security"
+providers:
+  - "azure"
+domains:
+  - "systems management"
 categories:
   - "security monitoring"
   - "auditing"

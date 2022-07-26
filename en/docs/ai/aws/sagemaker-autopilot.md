@@ -1,10 +1,13 @@
 ---
-services: "ai"
-providers: "aws"
-categories:
+services:
+  - "ai"
+providers:
+  - "aws"
+domains:
   - "machine learning"
-  - "prebuilt models"
   - "serverless"
+categories:
+  - "prebuilt models"
 title: "Amazon Sagemaker Autopilot"
 linkTitle: "Amazon Sagemaker Autopilot"
 ---

@@ -1,7 +1,12 @@
 ---
-services: "network"
-providers: "aws"
-categories: "virtual network"
+services:
+  - "network"
+providers:
+  - "aws"
+domains:
+  - "connectivity"
+categories:
+  - "virtual network"
 title: "Amazon Virtual Private Cloud"
 linkTitle: "Amazon VPC"
 ---

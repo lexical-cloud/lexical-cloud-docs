@@ -1,13 +1,16 @@
 ---
 services: 
- - "database"
- - "analytics"
-providers: "aws"
-categories:
+  - "database"
+  - "analytics"
+providers:
+  - "aws"
+domains:
   - "big data"
-  - "unstructured data"
-  - "sql compliant"
+  - "data management"
   - "serverless"
+categories:
+  - "sql compliant"
+  - "unstructured data"
 title: "Amazon Athena"
 linkTitle: "Amazon Athena"
 ---

@@ -2,7 +2,10 @@
 services: 
   - "migration"
   - "database"
-providers: "aws"
+providers:
+  - "aws"
+domains:
+  - "data management"
 categories:
   - "database migration"
 title: "AWS Database Migration Service"

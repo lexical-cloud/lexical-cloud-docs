@@ -1,9 +1,15 @@
 ---
-services: "monitor"
-providers: "aws"
-categories:
+services:
+  - "monitor"
+providers:
+  - "aws"
+domains:
   - "observability"
-  - "notifications"
+categories:
+  - "telemetry data"
+features:
+  - "alerts"
+  - "open telemetry"
 title: "Amazon CloudWatch"
 linkTitle: "Amazon CloudWatch"
 ---

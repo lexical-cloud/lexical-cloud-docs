@@ -1,10 +1,15 @@
 ---
-services: "governance"
-providers: "gcp"
+services:
+  - "governance"
+providers:
+  - "gcp"
+domains:
+  - "finops"
+  - "systems management"
 categories:
   - "resource management"
 features:
-  - "notifications"
+  - "alerts"
 title: "Google Cloud Quotas"
 linkTitle: "Google Cloud Quotas"
 ---

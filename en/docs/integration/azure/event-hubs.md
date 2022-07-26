@@ -1,9 +1,13 @@
 ---
-services: "integration"
-providers: "azure"
+services:
+  - "integration"
+providers:
+  - "azure"
+domains:
+  - "eventing"
+  - "serverless"
 categories:
   - "data streaming"
-  - "serverless"
 title: "Azure Event Hubs"
 linkTitle: "Azure Event Hubs"
 ---

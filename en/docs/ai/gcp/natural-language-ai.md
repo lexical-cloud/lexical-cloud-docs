@@ -1,10 +1,13 @@
 ---
-services: "ai"
-providers: "gcp"
-categories:
+services:
+  - "ai"
+providers:
+  - "gcp"
+domains:
   - "machine learning"
   - "serverless"
-  - "language"
+categories:
+  - "language processing"
 features:
   - "sentiment analysis"
   - "language translation"

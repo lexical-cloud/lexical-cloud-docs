@@ -1,12 +1,14 @@
 ---
-services: "integration"
-providers: "aws"
-categories:
+services:
+  - "integration"
+providers:
+  - "aws"
+domains:
   - "eventing"
-  - "pub-sub"
   - "serverless"
-features:
-  - "mobile push notifications"
+categories:
+  - "pub-sub"
+  - "push notifications"
 title: "Amazon Simple Notification Service"
 linkTitle: "Amazon SNS"
 ---

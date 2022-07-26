@@ -1,12 +1,14 @@
 ---
-services: "ai"
-providers: "gcp"
-categories:
+services:
+  - "ai"
+providers:
+  - "gcp"
+domains:
   - "machine learning"
-  - "serverless"
-  - "vision"
+categories:
+  - "computer vision"
 features:
-  - "visual identification"
+  - "object detection"
   - "prebuilt models"
 title: "Google Cloud Vision AI"
 linkTitle: "Google Cloud Vision AI"

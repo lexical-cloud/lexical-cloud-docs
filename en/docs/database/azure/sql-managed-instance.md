@@ -2,7 +2,11 @@
 services: 
   - "database"
   - "hybrid"
-providers: "azure"
+providers:
+  - "azure"
+domains:
+  - "data management"
+  - "managed service"
 categories:
   - "relational db"
   - "sql compliant"

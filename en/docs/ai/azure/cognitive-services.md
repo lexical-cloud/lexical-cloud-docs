@@ -1,20 +1,23 @@
 ---
-services: "ai"
-providers: "azure"
-categories:
+services:
+  - "ai"
+providers:
+  - "azure"
+domains:
   - "machine learning"
   - "serverless"
-  - "language"
-  - "speech"
-  - "vision"
-  - "decision"
+categories:
+  - "language processing"
+  - "speech processing"
+  - "computer vision"
+  - "decision making"
 features:
   - "sentiment analysis"
   - "speech-to-text"
   - "text-to-speech"
   - "language translation"
   - "speaker recognition"
-  - "visual identification"
+  - "object detection"
   - "recommendations"
   - "prebuilt models"
 title: "Azure Cognitive Services"

@@ -1,10 +1,14 @@
 ---
-services: "integration"
-providers: "aws"
-categories:
+services:
+  - "integration"
+providers:
+  -  "aws"
+domains:
   - "api management"
   - "serverless"
-domain:
+categories:
+  - "api lifecycle"
+features:
   - "rest api"
   - "http api"
   - "websocket api"

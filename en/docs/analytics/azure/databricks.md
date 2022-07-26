@@ -1,10 +1,12 @@
 ---
-services: "analytics"
-providers: "azure"
-categories:
+services:
+  - "analytics"
+providers:
+  - "azure"
+domains:
   - "big data"
-features:
-  - "spark-based"
+categories:
+  - "data processing"
 title: "Azure Databricks"
 linkTitle: "Azure Databricks"
 ---

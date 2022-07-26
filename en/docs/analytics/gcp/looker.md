@@ -1,10 +1,13 @@
 ---
-services: "analytics"
-providers: "gcp"
-categories:
-  - "big data"
-  - "dashboards"
+services:
+  - "analytics"
+providers:
+  - "gcp"
+domains:
   - "serverless"
+  - "big data"
+categories:
+  - "dashboards"
 title: "Google Cloud Looker"
 linkTitle: "Google Cloud Looker"
 ---

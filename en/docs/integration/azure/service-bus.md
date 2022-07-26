@@ -1,11 +1,14 @@
 ---
-services: "integration"
-providers: "azure"
-categories:
+services:
+  - "integration"
+providers:
+  - "azure"
+domains:
   - "eventing"
+  - "serverless"
+categories:
   - "message queue"
   - "pub-sub"
-  - "serverless"
 title: "Azure Service Bus"
 linkTitle: "Azure Service Bus"
 ---

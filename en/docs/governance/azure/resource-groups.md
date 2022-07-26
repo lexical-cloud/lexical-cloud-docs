@@ -1,11 +1,15 @@
 ---
-services: "governance"
-providers: "azure"
+services:
+  - "governance"
+providers:
+  - "azure"
+domains:
+  - "systems management"
 categories:
+  - "policy management"
   - "resource management"
 features:
   - "resource locks"
-  - "policy assignment"
 title: "Azure Resource Groups"
 linkTitle: "Azure Resource Groups"
 ---

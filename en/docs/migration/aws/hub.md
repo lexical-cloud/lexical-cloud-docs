@@ -1,10 +1,12 @@
 ---
-services: "migration"
-providers: "aws"
+services:
+  - "migration"
+providers:
+  - "aws"
+domains:
+  - "modernization"
 categories:
   - "server migration"
-labels:
-  - "modernization"
 title: "AWS Migration Hub"
 linkTitle: "AWS Migration Hub"
 ---

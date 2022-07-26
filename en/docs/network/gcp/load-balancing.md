@@ -1,6 +1,10 @@
 ---
-services: "network"
-providers: "gcp"
+services:
+  - "network"
+providers:
+  - "gcp"
+domains:
+  - "connectivity"
 categories: 
   - "load balancer"
   - "application load balancer"

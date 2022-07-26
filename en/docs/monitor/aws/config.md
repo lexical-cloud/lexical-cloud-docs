@@ -1,10 +1,14 @@
 ---
-services: "monitor"
-providers: "aws"
+services:
+  - "monitor"
+providers:
+  - "aws"
+domains:
+  - "systems management"
 categories:
   - "auditing"
   - "configuration management"
-  - "assessment"
+  - "risk assessment"
 title: "AWS Config"
 linkTitle: "AWS Config"
 ---

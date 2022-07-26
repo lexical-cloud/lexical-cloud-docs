@@ -1,11 +1,13 @@
 ---
-services: "integration"
-providers: "azure"
-categories:
+services:
+  - "integration"
+providers:
+  - "azure"
+domains:
   - "eventing"
   - "serverless"
-features:
-  - "mobile push notifications"
-title: "Azure Event Notifications"
-linkTitle: "Azure Event Notifications"
+categories:
+  - "push notifications"
+title: "Azure Notification Hubs"
+linkTitle: "Azure Notification Hubs"
 ---

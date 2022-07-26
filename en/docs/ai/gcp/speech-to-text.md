@@ -1,10 +1,13 @@
 ---
-services: "ai"
-providers: "azure"
-categories:
+services:
+  - "ai"
+providers:
+  - "gcp"
+domains:
   - "machine learning"
   - "serverless"
-  - "speech"
+categories:
+  - "speech processing"
 features:
   - "speech-to-text"
   - "prebuilt models"

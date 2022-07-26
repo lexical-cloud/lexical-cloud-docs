@@ -1,6 +1,11 @@
 ---
-services: "network"
-providers: "azure"
+services:
+  - "network"
+providers:
+  - "azure"
+domains:
+  - "edge computing"
+  - "systems management"
 categories: 
   - "content delivery"
   - "web application firewall"

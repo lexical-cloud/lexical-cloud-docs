@@ -1,9 +1,13 @@
 ---
-services: "integration"
-providers: "gcp"
+services:
+  - "integration"
+providers:
+  - "gcp"
+domains:
+  - "eventing"
+  - "serverless"
 categories:
   - "data streaming"
-  - "serverless"
 title: "Google Cloud Dataflow"
 linkTitle: "Google Cloud Dataflow"
 ---

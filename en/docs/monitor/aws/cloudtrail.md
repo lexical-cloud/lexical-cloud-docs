@@ -1,6 +1,10 @@
 ---
-services: "monitor"
-providers: "aws"
+services:
+  - "monitor"
+providers:
+  - "aws"
+domains:
+  - "observability"
 categories:
   - "auditing"
 title: "Amazon CloudTrail"

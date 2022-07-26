@@ -1,8 +1,12 @@
 ---
-services: "identity"
-providers: "azure"
+services:
+  - "identity"
+providers:
+  - "azure"
+domains:
+  - "identity management"
 categories:
-  - "access management"
+  - "access control"
 title: "Azure Role Based Access Control"
 linkTitle: "Azure RBAC"
 ---

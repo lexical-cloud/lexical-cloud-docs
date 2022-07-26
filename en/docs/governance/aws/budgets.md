@@ -1,10 +1,15 @@
 ---
-services: "governance"
-providers: "aws"
+services:
+  - "governance"
+providers:
+  - "aws"
+domains:
+  - "finops"
+  - "systems management"
 categories:
   - "cost management"
 features:
-  - "notifications"
+  - "alerts"
 title: "AWS Budgets"
 linkTitle: "AWS Budgets"
 ---

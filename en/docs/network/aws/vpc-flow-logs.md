@@ -2,11 +2,12 @@
 services: 
   - "network"
   - "monitor"
-providers: "aws"
-categories: 
-  "network monitor"
+providers:
+  - "aws"
 domains:
- - "virtual network"
+  - "connectivity"
+categories: 
+  - "network monitoring"
 title: "AWS VPC Flow Logs"
 linkTitle: "AWS VPC Flow Logs"
 ---

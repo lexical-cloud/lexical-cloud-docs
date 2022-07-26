@@ -2,7 +2,10 @@
 services: 
   - "migration"
   - "database"
-providers: "azure"
+providers:
+  - "azure"
+domains:
+  - "data management"
 categories:
   - "database migration"
 title: "Azure Database Migration Service"

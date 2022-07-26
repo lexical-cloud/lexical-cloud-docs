@@ -1,9 +1,12 @@
 ---
-services: "framework"
-providers: "azure"
+services:
+  - "framework"
+providers:
+  - "azure"
+domains:
+  - "architecture"
 categories:
   - "decision making"
-  - "architecture"
 title: "Azure Well-Architected Framework"
 linkTitle: "Azure Well-Architected Framework"
 ---

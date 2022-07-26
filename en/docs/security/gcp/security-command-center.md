@@ -1,6 +1,10 @@
 ---
-services: "security"
-providers: "gcp"
+services:
+  - "security"
+providers:
+  - "gcp"
+domains:
+  - "systems management"
 categories:
   - "security monitoring"
   - "auditing"

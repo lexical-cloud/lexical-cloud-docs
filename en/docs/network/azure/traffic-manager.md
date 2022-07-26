@@ -1,12 +1,14 @@
 ---
-services: "network"
-providers: "azure"
+services:
+  - "network"
+providers:
+  - "azure"
+domains:
+  - "connectivity"
 categories:
   - "load balancer"
 features:
   - "traffic routing"
-domain:
-  - "dns"
 title: "Azure Traffic Manager"
 linkTitle: "Azure Traffic Manager"
 ---

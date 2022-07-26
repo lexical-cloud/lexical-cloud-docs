@@ -1,9 +1,13 @@
 ---
-services: "integration"
-providers: "aws"
+services:
+  - "integration"
+providers:
+  - "aws"
+domains:
+  - "eventing"
+  - "serverless"
 categories:
   - "data streaming"
-  - "serverless"
 title: "Amazon Kinesis"
 linkTitle: "Amazon Kinesis"
 ---

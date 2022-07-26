@@ -1,9 +1,12 @@
 ---
-services: "identity"
-providers: "aws"
-categories:
+services:
+  - "identity"
+providers:
+  - "gcp"
+domains:
   - "identity management"
-  - "access management"
+categories:
+  - "access control"
 title: "Google Cloud Identity and Access Management"
 linkTitle: "Google Cloud IAM"
 ---

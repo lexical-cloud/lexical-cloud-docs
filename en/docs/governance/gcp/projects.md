@@ -1,10 +1,13 @@
 ---
-services: "governance"
-providers: "gcp"
+services:
+  - "governance"
+providers:
+  - "gcp"
+domains:
+  - "systems management"
 categories:
+  - "policy management"
   - "resource management"
-features:
-  - "policy assignment"
 title: "Google Cloud Projects"
 linkTitle: "Google Cloud Projects"
 ---

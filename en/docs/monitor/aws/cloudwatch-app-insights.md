@@ -1,9 +1,15 @@
 ---
-services: "monitor"
-providers: "aws"
-categories:
+services:
+  - "monitor"
+providers:
+  - "aws"
+domains:
   - "observability"
-  - "notifications"
+categories:
+  - "telemetry data"
+  - "dashboards"
+features:
+  - "alerts"
   - "automation"
 title: "Amazon CloudWatch Application Insights"
 linkTitle: "Amazon CloudWatch App Insights"

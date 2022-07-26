@@ -1,9 +1,12 @@
 ---
-services: "framework"
-providers: "aws"
+services:
+  - "framework"
+providers:
+  - "aws"
+domains:
+  - "architecture"
 categories:
   - "decision making"
-  - "architecture"
 title: "AWS Well-Architected Framework"
 linkTitle: "AWS Well-Architected Framework"
 ---

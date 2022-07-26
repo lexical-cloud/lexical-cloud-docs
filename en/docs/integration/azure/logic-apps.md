@@ -1,12 +1,16 @@
 ---
-services: "integration"
-providers: "azure"
-categories:
-  - "workflow"
+services:
+  - "integration"
+providers:
+  - "azure"
+domains:
+  - "end-user computing"
+  - "process modeling"
   - "serverless"
-labels:
-  - "no-code"
+categories:
   - "low-code"
+  - "no-code"
+  - "workflow engine"
 title: "Azure Logic Apps"
 linkTitle: "AWS Logic Apps"
 ---
