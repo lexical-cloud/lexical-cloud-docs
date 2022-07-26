@@ -7,7 +7,7 @@ domains:
   - "systems management"
 categories:
   - "configuration management"
-  - "secrets management"
+  - "secret management"
 title: "AWS Systems Manager Parameter Store"
 linkTitle: "AWS Systems Manager Parameter Store"
 ---

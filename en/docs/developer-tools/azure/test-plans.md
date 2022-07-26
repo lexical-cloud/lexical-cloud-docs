@@ -1,11 +1,13 @@
 ---
-services: "developer tools"
-providers: "azure"
+services:
+  - "developer tools"
+providers:
+  - "azure"
+domains:
+  - "developer toolchain"
 categories:
   - "test planning"
   - "test execution"
-domains:
-  - "devops"
 title: "Azure Test Plans"
 linkTitle: "Azure Test Plans"
 ---

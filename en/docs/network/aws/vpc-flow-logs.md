@@ -7,7 +7,7 @@ providers:
 domains:
   - "connectivity"
 categories: 
-  - "network monitor"
+  - "network monitoring"
 title: "AWS VPC Flow Logs"
 linkTitle: "AWS VPC Flow Logs"
 ---

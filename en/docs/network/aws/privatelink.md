@@ -1,9 +1,15 @@
 ---
-services: "network"
-providers: "aws"
+services:
+  - "hybrid"
+  - "network"
+providers:
+  - "aws"
+domains:
+  - "connectivity"
 categories: 
- - "virtual network"
- - "private network"
+  - "on-premises"
+  - "private network"
+  - "virtual network"
 title: "AWS PrivateLink"
 linkTitle: "AWS PrivateLink"
 ---

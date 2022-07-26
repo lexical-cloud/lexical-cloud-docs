@@ -4,11 +4,12 @@ services:
 providers:
   - "aws"
 domains:
+  - "finops"
   - "systems management"
 categories:
   - "cost management"
 features:
-  - "cost estimates"
+  - "cost estimation"
   - "no account required"
 title: "AWS Pricing Calculator"
 linkTitle: "AWS Pricing Calculator"

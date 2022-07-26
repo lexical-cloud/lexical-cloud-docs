@@ -17,7 +17,7 @@ features:
   - "text-to-speech"
   - "language translation"
   - "speaker recognition"
-  - "visual identification"
+  - "object detection"
   - "recommendations"
   - "prebuilt models"
 title: "Azure Cognitive Services"

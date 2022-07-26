@@ -4,11 +4,12 @@ services:
 providers:
   - "gcp"
 domains:
+  - "finops"
   - "systems management"
 categories:
   - "cost management"
 features:
-  - "cost estimates"
+  - "cost estimation"
   - "no account required"
 title: "Google Cloud Pricing Calculator"
 linkTitle: "Google Cloud Pricing Calculator"

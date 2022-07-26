@@ -9,7 +9,7 @@ categories:
   - "telemetry data"
   - "auditing"
 features:
-  - "notifications"
+  - "alerts"
 title: "Azure Monitor"
 linkTitle: "Azure Monitor"
 ---

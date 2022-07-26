@@ -2,7 +2,10 @@
 services: 
   - "database"
   - "storage"
-providers: "azure"
+providers:
+  - "azure"
+domains:
+  - "data management"
 categories:
   - "nosql db"
   - "key-value store"

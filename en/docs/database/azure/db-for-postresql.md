@@ -1,6 +1,10 @@
 ---
-services: "database"
-providers: "azure"
+services:
+  - "database"
+providers:
+  - "azure"
+domains:
+  - "data management"
 categories:
   - "relational db"
   - "sql compliant"

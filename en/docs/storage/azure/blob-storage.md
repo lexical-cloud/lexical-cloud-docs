@@ -8,7 +8,7 @@ domains:
   - "serverless"
 categories:
   - "data archive"
-  - "blob storage"
+  - "object storage"
 title: "Azure Blob Storage"
 linkTitle: "Azure Blob Storage"
 ---

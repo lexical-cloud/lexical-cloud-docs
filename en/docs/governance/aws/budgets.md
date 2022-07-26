@@ -4,11 +4,12 @@ services:
 providers:
   - "aws"
 domains:
+  - "finops"
   - "systems management"
 categories:
   - "cost management"
 features:
-  - "notifications"
+  - "alerts"
 title: "AWS Budgets"
 linkTitle: "AWS Budgets"
 ---

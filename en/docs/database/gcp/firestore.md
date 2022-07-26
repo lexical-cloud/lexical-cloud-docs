@@ -4,10 +4,11 @@ services:
 providers:
   - "gcp"
 domains:
-  - "nosql db"
+  - "data management"
   - "serverless"
 categories:
   - "document db"
+  - "nosql db"
 title: "Google Cloud Firestore"
 linkTitle: "Google Cloud Firestore"
 ---

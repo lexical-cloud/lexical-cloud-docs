@@ -1,6 +1,8 @@
 ---
-services: "security"
-providers: "aws"
+services:
+  - "security"
+providers:
+  - "aws"
 domains:
   - "data management"
 categories:

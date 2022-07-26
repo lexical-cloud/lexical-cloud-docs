@@ -4,6 +4,7 @@ services:
 providers:
   - "aws"
 domains:
+  - "finops"
   - "systems management"
 categories:
   - "cost management"

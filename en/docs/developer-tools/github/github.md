@@ -5,6 +5,7 @@ providers:
   - "github"
 domains:
   - "developer toolchain"
+  - "project management"
 categories:
   - "source control"
   - "project planning"

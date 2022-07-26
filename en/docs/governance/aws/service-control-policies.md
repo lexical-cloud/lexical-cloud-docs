@@ -6,7 +6,7 @@ providers:
 domains:
   - "systems management"
 categories:
-  - "access management"
+  - "access control"
 title: "AWS Service Control Policies"
 linkTitle: "AWS Service Control Policies"
 ---

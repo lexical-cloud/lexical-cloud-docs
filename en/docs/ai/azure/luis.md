@@ -1,6 +1,8 @@
 ---
-services: "ai"
-providers: "azure"
+services:
+  - "ai"
+providers:
+  - "azure"
 domains:
   - "machine learning"
   - "serverless"

@@ -9,7 +9,7 @@ domains:
 categories:
   - "computer vision"
 features:
-  - "visual identification"
+  - "object detection"
   - "prebuilt models"
 title: "Google Cloud Vision AI"
 linkTitle: "Google Cloud Vision AI"

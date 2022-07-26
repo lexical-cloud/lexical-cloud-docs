@@ -9,7 +9,8 @@ domains:
 categories:
   - "vulnerability management"
   - "risk assessment"
-features: "agent-based"
+features:
+  - "agent-based"
 title: "Amazon Inspector"
 linkTitle: "Amazon Inspector"
 ---

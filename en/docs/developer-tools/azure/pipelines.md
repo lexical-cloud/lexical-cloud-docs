@@ -1,12 +1,14 @@
 ---
-services: "developer tools"
-providers: "azure"
+services:
+  - "developer tools"
+providers:
+  - "azure"
+domains:
+  - "devops"
 categories:
   - "continuous integration"
   - "continuous deployment"
   - "continuous delivery"
-domains:
-  - "devops"
 title: "Azure Pipelines"
 linkTitle: "Azure Pipelines"
 ---

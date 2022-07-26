@@ -6,9 +6,9 @@ providers:
 domains:
   - "systems management"
 categories:
+  - "policy management"
   - "resource management"
 features:
-  - "policy assignment"
 title: "Azure Management Groups"
 linkTitle: "Azure Management Groups"
 ---

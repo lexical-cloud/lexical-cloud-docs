@@ -1,13 +1,15 @@
 ---
-services: "monitor"
-providers: "gcp"
+services:
+  - "monitor"
+providers:
+  - "gcp"
 domains:
   - "observability"
 categories:
   - "dashboards"
   - "telemetry data"
 features:
-  - "notifications"
+  - "alerts"
   - "open telemetry"
 title: "Google Cloud Monitoring"
 linkTitle: "Google Cloud Monitoring"

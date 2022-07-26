@@ -1,10 +1,12 @@
 ---
-services: "network"
-providers: "gcp"
+services:
+  - "network"
+providers:
+  - "gcp"
 domains:
   - "connectivity"
 categories: 
-  - "network interface"
+  - "virtual network interface"
   - "private network" 
 title: "Google Cloud Router"
 linkTitle: "Google Cloud Router"

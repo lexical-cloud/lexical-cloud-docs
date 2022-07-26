@@ -6,6 +6,7 @@ providers:
 domains:
   - "systems management"
 categories:
+  - "policy management"
   - "resource management"
 title: "Azure Policy"
 linkTitle: "Azure Policy"

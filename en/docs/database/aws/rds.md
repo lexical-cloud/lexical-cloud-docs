@@ -1,6 +1,10 @@
 ---
-services: "database"
-providers: "aws"
+services:
+  - "database"
+providers:
+  - "aws"
+domains:
+  - "data management"
 categories:
   - "relational db"
   - "sql compliant"

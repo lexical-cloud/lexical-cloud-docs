@@ -5,9 +5,9 @@ providers:
   - "azure"
 domains:
   - "containerization"
+  - "serverless"
 categories:
   - "container orchestrator"
-  - "serverless"
 title: "Azure Container Apps"
 linkTitle: "Azure Container Apps"
 ---

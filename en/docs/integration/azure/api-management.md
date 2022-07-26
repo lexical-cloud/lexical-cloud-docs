@@ -1,11 +1,15 @@
 ---
-services: "integration"
-providers: "azure"
+services:
+  - "integration"
+providers:
+  - "azure"
 domains:
-  - "serverless"
-  - "api lifecycle"
-categories:
   - "api management"
+  - "serverless"
+categories:
+  - "api gateway"
+  - "api lifecycle"
+  - "api portal"
 features:
   - "rest api"
   - "http api"

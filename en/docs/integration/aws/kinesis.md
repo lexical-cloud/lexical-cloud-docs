@@ -1,6 +1,8 @@
 ---
-services: "integration"
-providers: "aws"
+services:
+  - "integration"
+providers:
+  - "aws"
 domains:
   - "eventing"
   - "serverless"

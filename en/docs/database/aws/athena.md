@@ -5,11 +5,12 @@ services:
 providers:
   - "aws"
 domains:
-  - "serverless"
   - "big data"
+  - "data management"
+  - "serverless"
 categories:
-  - "unstructured data"
   - "sql compliant"
+  - "unstructured data"
 title: "Amazon Athena"
 linkTitle: "Amazon Athena"
 ---

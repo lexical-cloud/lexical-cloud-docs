@@ -7,9 +7,9 @@ domains:
   - "serverless"
   - "process modeling"
 categories:
+  - "multi-cloud"
   - "workflow engine"
 labels:
-  - "multi-cloud"
 title: "Google Cloud Composer"
 linkTitle: "Google Cloud Composer"
 ---

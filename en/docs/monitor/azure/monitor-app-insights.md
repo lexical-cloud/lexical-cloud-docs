@@ -9,7 +9,7 @@ categories:
   - "telemetry data"
   - "dashboards"
 features:
-  - "notifications"
+  - "alerts"
   - "automation"
 title: "Azure Monitor Application Insights"
 linkTitle: "Azure Monitor App Insights"

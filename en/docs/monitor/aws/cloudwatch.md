@@ -8,7 +8,7 @@ domains:
 categories:
   - "telemetry data"
 features:
-  - "notifications"
+  - "alerts"
   - "open telemetry"
 title: "Amazon CloudWatch"
 linkTitle: "Amazon CloudWatch"

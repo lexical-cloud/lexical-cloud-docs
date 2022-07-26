@@ -6,10 +6,10 @@ providers:
 domains:
   - "systems management"
 categories:
+  - "policy management"
   - "resource management"
 features:
   - "resource locks"
-  - "policy assignment"
 title: "Azure Resource Groups"
 linkTitle: "Azure Resource Groups"
 ---

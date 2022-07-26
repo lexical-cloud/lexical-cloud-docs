@@ -1,10 +1,14 @@
 ---
-services: "database"
-providers: "aws"
+services:
+  - "database"
+providers:
+  - "aws"
+domains:
+  - "data management"
+  - "serverless"
 categories:
   - "relational db"
   - "sql compliant"
-  - "serverless"
 features:
   - "mysql"
   - "postgresql"

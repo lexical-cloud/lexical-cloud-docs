@@ -4,11 +4,12 @@ services:
 providers:
   - "aws"
 domains:
-  - "nosql db"
+  - "data management"
   - "serverless"
 categories:
-  - "key-value store"
   - "document db"
+  - "key-value store"
+  - "nosql db"
 title: "Amazon DynamoDB"
 linkTitle: "Amazon DynamoDB"
 ---

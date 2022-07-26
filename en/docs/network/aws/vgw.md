@@ -4,7 +4,7 @@ services:
 providers:
   - "aws"
 categories: 
-  - "network interface"
+  - "virtual network interface"
   - "private network"
 domains:
   - "connectivity" 

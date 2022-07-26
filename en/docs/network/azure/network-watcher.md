@@ -7,7 +7,7 @@ providers:
 domains:
   - "connectivity"
 categories:
-  - "network monitor"
+  - "network monitoring"
 title: "Azure Network Watcher"
 linkTitle: "Azure Network Watcher"
 ---

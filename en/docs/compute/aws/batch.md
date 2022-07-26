@@ -1,7 +1,12 @@
 ---
-services: "compute"
-providers: "aws"
-categories: "batch processing"
+services:
+  - "compute"
+providers:
+  - "aws"
+domains:
+  - "architecture"
+categories:
+  - "batch processing"
 title: "AWS Batch"
 linkTitle: "AWS Batch"
 ---

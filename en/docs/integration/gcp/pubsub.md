@@ -1,6 +1,8 @@
 ---
-services: "integration"
-providers: "gcp"
+services:
+  - "integration"
+providers:
+  - "gcp"
 domains:
   - "eventing"
   - "serverless"

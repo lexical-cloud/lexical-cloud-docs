@@ -9,7 +9,7 @@ categories:
   - "telemetry data"
   - "dashboards"
 features:
-  - "notifications"
+  - "alerts"
   - "automation"
 title: "Amazon CloudWatch Application Insights"
 linkTitle: "Amazon CloudWatch App Insights"

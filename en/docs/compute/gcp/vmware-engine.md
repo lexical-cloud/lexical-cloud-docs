@@ -1,11 +1,15 @@
 ---
-services: "compute"
-providers: "gcp"
+services:
+  - "compute"
+  - "migration"
+providers:
+  - "gcp"
+domains:
+  - "modernization"
+  - "virtualization"
 categories: 
-  - "on-prem migration"
-  - "vm workloads"
-labels:
-  - "lift-and-shift"
+  - "virtual machines"
+  - "rehosting"
 title: "Google Cloud VMware Engine"
 linkTitle: "Google Cloud VMware Engine"
 ---

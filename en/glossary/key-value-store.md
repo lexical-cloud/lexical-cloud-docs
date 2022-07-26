@@ -5,5 +5,7 @@ definitionLink: "https://en.wikipedia.org/wiki/Key-value_database"
 services:
   - "database"
 domains:
+  - "data management"
+categories:
   - "nosql db"
 ---

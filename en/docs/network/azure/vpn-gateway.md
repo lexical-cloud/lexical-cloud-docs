@@ -6,7 +6,7 @@ providers:
 domains:
   - "connectivity"
 categories: 
-  - "network interface"
+  - "virtual network interface"
   - "private network" 
 title: "Azure VPN Gateway"
 linkTitle: "Azure VPN Gateway"

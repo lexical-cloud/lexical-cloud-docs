@@ -2,7 +2,11 @@
 services: 
   - "database"
   - "iot"
-providers: "azure"
+providers:
+  - "azure"
+domains:
+  - "data management"
+  - "edge computing"
 categories:
   - "relational db"
   - "sql compliant"

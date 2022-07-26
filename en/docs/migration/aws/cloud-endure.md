@@ -1,6 +1,10 @@
 ---
-services: "migration"
-providers: "aws"
+services:
+  - "migration"
+providers:
+  - "aws"
+domains:
+  - "modernization"
 categories:
   - "server migration"
 labels:
