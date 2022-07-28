@@ -3,7 +3,6 @@ services:
   - "analytics"
 providers:
   - "gcp"
-  - "big data"
 domains:
   - "big data"
 categories:
