@@ -1,8 +1,8 @@
 ---
 services:
-   "monitor"
+  - "monitor"
 providers:
-   "azure"
+  - "azure"
 domains:
   - "observability"
 categories:
