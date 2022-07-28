@@ -1,6 +1,6 @@
 ---
 services:
-  - "databases"
+  - "database"
   - "migration"
 providers:
   - "aws"
