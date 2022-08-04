@@ -1,6 +1,5 @@
 ---
-title: "Lexical.cloud"
-linkTitle: "Lexical.cloud"
+title: "Glossary"
+linkTitle: "Glossary"
 weight: 20
-type: glossary
 ---
