@@ -4,4 +4,6 @@ linkTitle: "machine learning"
 definitionLink: "https://en.wikipedia.org/wiki/Machine_learning"
 services:
   - "ai"
+domains:
+  - "big data"
 ---
