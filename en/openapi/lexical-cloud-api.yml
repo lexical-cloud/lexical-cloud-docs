@@ -1,0 +1,242 @@
+openapi: 3.0.0
+
+info:
+  version: 1.0.0
+  title: Lexical.cloud API
+  description: The data from Lexical.cloud docs
+
+tags:
+  - name: docs 
+    description: Everything about docs
+  - name: glossary
+    description: Everything about glossary
+  - name: taxonomy
+    description: Everything about taxonomy
+
+paths:
+
+  /docs/{serviceId}/{providerId}/{docId}:
+    get:
+      description: Returns a doc
+      tags:
+        - docs
+      parameters:
+        - name: serviceId 
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: providerId 
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: docId 
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successfully returned a doc
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Doc'
+
+  /glossary/{glossaryId}:
+    get:
+      description: Returns a glossary entry
+      tags:
+        - glossary
+      parameters:
+        - name: glossaryId 
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successfully returned a glossary
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Definition'
+
+  /{taxonomyId}/{termId}:
+    get:
+      description: Returns a taxonomy entry
+      tags:
+        - taxonomy
+      parameters:
+        - name: taxonomyId 
+          in: path
+          required: true
+          schema:
+            type: string
+            enum:
+              - services
+              - providers
+              - domains
+              - categories
+              - features
+              - labels
+        - name: termId 
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successfully returned a service
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Taxonomy'
+
+  /{taxonomyId}/{termId}/relations:
+    get:
+      description: Returns relations for a taxonomy term
+      tags:
+        - taxonomy
+      parameters:
+        - name: taxonomyId 
+          in: path
+          required: true
+          schema:
+            type: string
+            enum:
+              - services
+              - providers
+              - domains
+              - categories
+              - features
+              - labels
+        - name: termId 
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successfully returned a docs for taxonomy term
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Relation'
+
+  /{taxonomyId}/{termId}/docs:
+    get:
+      description: Returns docs for a taxonmy term
+      tags:
+        - taxonomy
+      parameters:
+        - name: taxonomyId 
+          in: path
+          required: true
+          schema:
+            type: string
+            enum:
+              - services
+              - providers
+              - domains
+              - categories
+              - features
+              - labels
+        - name: termId 
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successfully returned a docs for service
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Doc'
+
+components:
+
+  schemas:
+
+    Definition:
+      allOf:
+        - type: object
+          properties:
+            title:
+              type: string
+          required:
+            - id
+        - $ref: '#/components/schemas/Relationship'
+
+    Doc:
+      allOf:
+        - type: object
+          properties:
+            name:
+              type: string
+            permalink:
+              type: string
+          required:
+            - id
+        - $ref: '#/components/schemas/Relationship'
+
+    Relationship:
+      type: object
+      properties:
+        services:
+          type: array 
+          items:
+            type: string
+        providers:
+          type: array 
+          items:
+            type: string
+        domains:
+          type: array 
+          items:
+            type: string
+        categories:
+          type: array 
+          items:
+            type: string
+        features:
+          type: array 
+          items:
+            type: string
+        labels:
+          type: array 
+          items:
+            type: string
+
+    Relation:
+      type: object
+      properties:
+        hierarchical:
+          $ref: '#/components/schemas/Relationship'
+        instance:
+          type: array 
+          items:
+            type: string
+        intersection:
+          $ref: '#/components/schemas/Relationship'
+
+    Taxonomy:
+      type: object
+      properties:
+        id:
+          type: string
+        definition:
+          $ref: '#/components/schemas/Definition'
+        type:
+            type: string
+        name:
+            type: string
+        permalink:
+            type: string
+      required:
+        - id
+
