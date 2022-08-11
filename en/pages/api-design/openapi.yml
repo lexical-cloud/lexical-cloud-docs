@@ -1,23 +1,23 @@
 openapi: 3.0.0
 
 info:
-  version: 1.0.0
+  version: 0.1.0
   title: Lexical.cloud API
-  description: The data from Lexical.cloud docs
+  description: Queryable interface for the data curated by Lexical.cloud
 
 tags:
   - name: docs 
-    description: Everything about docs
+    description: Lookup entries for documented cloud products
   - name: glossary
-    description: Everything about glossary
+    description: Lookup glossary terms for cloud computing
   - name: taxonomy
-    description: Everything about taxonomy
+    description: Lookup by taxonomy for the cloud (services, providers, domains, categories, features, labels)
 
 paths:
 
   /docs/{serviceId}/{providerId}/{docId}:
     get:
-      description: Returns a doc
+      description: Returns a documented entry for a service and provider
       tags:
         - docs
       parameters:
@@ -26,16 +26,19 @@ paths:
           required: true
           schema:
             type: string
+          description: Identifier for the service being offered
         - name: providerId 
           in: path
           required: true
           schema:
             type: string
+          description: Identifier for the provider of the service
         - name: docId 
           in: path
           required: true
           schema:
             type: string
+          description: Identifier for the documented entry
       responses:
         '200':
           description: Successfully returned a doc
@@ -44,17 +47,18 @@ paths:
               schema:
                 $ref: '#/components/schemas/Doc'
 
-  /glossary/{glossaryId}:
+  /glossary/{termId}:
     get:
-      description: Returns a glossary entry
+      description: Returns a glossary entry for a term
       tags:
         - glossary
       parameters:
-        - name: glossaryId 
+        - name: termId 
           in: path
           required: true
           schema:
             type: string
+          description: Identifier for term in glossary
       responses:
         '200':
           description: Successfully returned a glossary
@@ -65,7 +69,7 @@ paths:
 
   /{taxonomyId}/{termId}:
     get:
-      description: Returns a taxonomy entry
+      description: Returns entry for a term within a taxonomy
       tags:
         - taxonomy
       parameters:
@@ -81,22 +85,24 @@ paths:
               - categories
               - features
               - labels
+          description: Identifier for the taxonomy
         - name: termId 
           in: path
           required: true
           schema:
             type: string
+          description: Identifier for term in the taxonomy
       responses:
         '200':
-          description: Successfully returned a service
+          description: Successfully returned a taxonomy term
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Taxonomy'
+                $ref: '#/components/schemas/Term'
 
   /{taxonomyId}/{termId}/relations:
     get:
-      description: Returns relations for a taxonomy term
+      description: Returns relations for a term within a taxonomy
       tags:
         - taxonomy
       parameters:
@@ -112,14 +118,16 @@ paths:
               - categories
               - features
               - labels
+          description: Identifier for the taxonomy
         - name: termId 
           in: path
           required: true
           schema:
             type: string
+          description: Identifier for term in the taxonomy
       responses:
         '200':
-          description: Successfully returned a docs for taxonomy term
+          description: Successfully returned relations for taxonomy term
           content:
             application/json:
               schema:
@@ -127,7 +135,7 @@ paths:
 
   /{taxonomyId}/{termId}/docs:
     get:
-      description: Returns docs for a taxonmy term
+      description: Returns documented entries for a taxonomy term
       tags:
         - taxonomy
       parameters:
@@ -143,14 +151,16 @@ paths:
               - categories
               - features
               - labels
+          description: Identifier for the taxonomy
         - name: termId 
           in: path
           required: true
           schema:
             type: string
+          description: Identifier for term in the taxonomy
       responses:
         '200':
-          description: Successfully returned a docs for service
+          description: Successfully returned documented entries for a taxonomy term
           content:
             application/json:
               schema:
@@ -168,9 +178,17 @@ components:
           properties:
             title:
               type: string
+              description: Title for proper display purposes
+            url:
+              type: string
+              description: Link to definition
+            permalink:
+              type: string
+              description: Path to definition entry
           required:
-            - id
-        - $ref: '#/components/schemas/Relationship'
+            - title
+            - permalink
+        - $ref: '#/components/schemas/Taxonomy'
 
     Doc:
       allOf:
@@ -178,65 +196,85 @@ components:
           properties:
             name:
               type: string
+              description: Full name of entry
             permalink:
               type: string
+              description: Path to entry
           required:
-            - id
-        - $ref: '#/components/schemas/Relationship'
+            - name
+            - permalink
+        - $ref: '#/components/schemas/Taxonomy'
 
-    Relationship:
+    Taxonomy:
       type: object
       properties:
         services:
           type: array 
           items:
             type: string
+          description: List of service identifiers
         providers:
           type: array 
           items:
             type: string
+          description: List of provider identifiers
         domains:
           type: array 
           items:
             type: string
+          description: List of domain identifiers
         categories:
           type: array 
           items:
             type: string
+          description: List of category identifiers
         features:
           type: array 
           items:
             type: string
+          description: List of feature identifiers
         labels:
           type: array 
           items:
             type: string
+          description: List of label identifiers
 
     Relation:
       type: object
       properties:
         hierarchical:
-          $ref: '#/components/schemas/Relationship'
+          $ref: '#/components/schemas/Taxonomy'
+          description: Relations by hierarchy of term
         instance:
           type: array 
           items:
             type: string
+          description: Instances of documentated products for term
         intersection:
-          $ref: '#/components/schemas/Relationship'
+          $ref: '#/components/schemas/Taxonomy'
+          description: Intersections with terms outside hierarchy
 
-    Taxonomy:
+    Term:
       type: object
       properties:
         id:
           type: string
+          description: Identifier of term
         definition:
           $ref: '#/components/schemas/Definition'
+          description: Definition of term
         type:
-            type: string
+          type: string
+          description: Taxonomy for the term 
         name:
-            type: string
+          type: string
+          description: Name of term for common usage
         permalink:
-            type: string
+          type: string
+          description: Path to term entry
       required:
         - id
+        - type
+        - name
+        - permalink
 
