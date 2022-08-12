@@ -4,34 +4,55 @@ linkTitle: "Data Model"
 weight: 20
 ---
 
+The docs of Lexical.cloud curate cloud products into hierarchical categories known as a taxonomy.  
+
+{{< alert title="Work in Progress" >}}
+Use "Create docs issue" to submit ideas for improving the below illustrations. Thanks!
+{{< /alert >}}
+
 ## Taxonomy Entities
 
+Terms for each entity originate in the docs. The glossary independently defines a term.
+
 ```mermaid
 erDiagram
-    GLOSSARY |o--|| SERVICE : relates
-    GLOSSARY |o--|| PROVIDER : creates
-    GLOSSARY |o--|| DOMAIN : relates
-    GLOSSARY |o--|| CATEGORY : relates
-    GLOSSARY |o--|| FEATURE : relates
-    GLOSSARY |o--|| LABEL : describes
-    SERVICE ||--o{ DOC : relates
-    PROVIDER ||--o{ DOC : creates
-    DOMAIN ||--o{ DOC : relates
-    CATEGORY ||--o{ DOC : relates
-    FEATURE ||--o{ DOC : relates
-    LABEL ||--o{ DOC : describes
+    GLOSSARY |o..|| SERVICE : defines
+    GLOSSARY |o..|| PROVIDER : defines
+    GLOSSARY |o..|| DOMAIN : defines
+    GLOSSARY |o..|| CATEGORY : defines
+    GLOSSARY |o..|| FEATURE : defines
+    GLOSSARY |o..|| LABEL : defines
+    SERVICE ||--o{ DOC : originates
+    PROVIDER ||--o{ DOC : originates
+    DOMAIN ||--o{ DOC : originates
+    CATEGORY ||--o{ DOC : originates
+    FEATURE ||--o{ DOC : originates
+    LABEL ||--o{ DOC : originates
 ```
 
-## Taxonomy Relations
+| Entity | Description | Example Terms |
+| ------ | ---------- | ------- |
+| Service | Purpose of a cloud product | Monitor, Governance  |
+| Provider | Originator of a cloud product | AWS, Azure, Google Cloud |
+| Domain | Collection of services with intersecting categories | Observability, Systems management |
+| Category | Group specific to a domain and/or service | Cost management, Dashboards |
+| Feature | Specific functionality from a product | Alerts, Reports |
+| Label | Attribute of a product | Deprecated |
+
+
+
+## Term Relations
+
+The glossary optionally relates each term to ancestor entities. Many docs reference each term.
 
 ```mermaid
 erDiagram
-    GLOSSARY |o--|| SERVICE : defines
-    GLOSSARY |o--|| PROVIDER : defines
-    GLOSSARY |o--|| DOMAIN : defines
-    GLOSSARY |o--|| CATEGORY : defines
-    GLOSSARY |o--|| FEATURE : defines
-    GLOSSARY |o--|| LABEL : defines
+    GLOSSARY |o..|| SERVICE : defines
+    GLOSSARY |o..|| PROVIDER : defines
+    GLOSSARY |o..|| DOMAIN : defines
+    GLOSSARY |o..|| CATEGORY : defines
+    GLOSSARY |o..|| FEATURE : defines
+    GLOSSARY |o..|| LABEL : defines
     SERVICE ||--o{ DOC : relates
     PROVIDER ||--o{ DOC : creates
     DOMAIN ||--o{ DOC : relates
@@ -45,23 +66,35 @@ erDiagram
     FEATURE ||--o{ CATEGORY : relates
 ```
 
-## Logical Model
+| Entity | Ancestors | Descendants |
+| ------ | ---------- | ------- |
+| Service | N/A | Domain, Category, Feature |
+| Provider | N/A | N/A |
+| Domain | Domain | Service, Category, Feature |
+| Category | Domain, Service, Category  | Feature |
+| Feature | Domain, Service, Category  | N/A |
+| Label | N/A  | N/A |
+
+
+## Logical Data Model
+
+The nested structure of the data is not great for illustrating in ER diagrams.
 
 ```mermaid
 erDiagram
-    GLOSSARY |o--|| PROVIDER : defines
-    GLOSSARY |o--|| SERVICE : defines
-    GLOSSARY |o--|| DOMAIN : defines
-    GLOSSARY |o--|| CATEGORY : defines
-    GLOSSARY |o--|| FEATURE : defines
-    GLOSSARY |o--|| LABEL : defines
+    GLOSSARY |o..|| PROVIDER : defines
+    GLOSSARY |o..|| SERVICE : defines
+    GLOSSARY |o..|| DOMAIN : defines
+    GLOSSARY |o..|| CATEGORY : defines
+    GLOSSARY |o..|| FEATURE : defines
+    GLOSSARY |o..|| LABEL : defines
     GLOSSARY {
         string title
         string linkTitle PK
         url definitionLink
     }
     SERVICE }|--|{ DOC : relates
-    SERVICE ||--o{ DOMAIN : relates
+    SERVICE }o--o{ DOMAIN : relates
     SERVICE {
         string term PK
     }
@@ -70,7 +103,7 @@ erDiagram
         string term PK
     }
     DOMAIN }|--|{ DOC : relates
-    DOMAIN ||--o{ CATEGORY : relates
+    DOMAIN }o--o{ CATEGORY : relates
     DOMAIN }|--o{ DOMAIN : relates
     DOMAIN {
         string term PK
@@ -78,7 +111,7 @@ erDiagram
         array domains FK
     }
     CATEGORY }|--|{ DOC : relates 
-    CATEGORY ||--o{ FEATURE : relates
+    CATEGORY }o--o{ FEATURE : relates
     CATEGORY }|--o{ CATEGORY: relates
     CATEGORY {
         string term PK
@@ -108,11 +141,13 @@ erDiagram
     }
 ```
 
-## Physical Model
+## Physical Data Model
+
+Each doc specifes minimal taxonomy terms and infers relationships from the glossary.
 
 ```mermaid
 erDiagram
-    GLOSSARY }|--o{ GLOSSARY : relates
+    GLOSSARY }o--o{ GLOSSARY : relates
     GLOSSARY {
         string title "Full title of term"
         string linkTitle PK "Term name as referenced by docs"
@@ -121,7 +156,7 @@ erDiagram
         array domains FK "List of terms for related domains"
         array categories FK "List of terms for related categories"
     }
-    GLOSSARY }o--|{ DOC : relates
+    GLOSSARY }o..o{ DOC : relates
     DOC {
         string title "Full title of entry"
         string linkTitle "Short title of entry"
