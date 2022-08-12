@@ -8,28 +8,40 @@ weight: 20
 
 ```mermaid
 erDiagram
-    DOCS ||--|{ SERVICE : provides
-    DOCS ||--|{ PROVIDER : from 
-    DOCS ||--|{ DOMAIN : belongs
-    DOCS ||--|{ CATEGORY : belongs
-    DOCS ||--o{ FEATURE : contains
-    DOCS ||--o{ LABEL : has
+    GLOSSARY |o--|| SERVICE : relates
+    GLOSSARY |o--|| PROVIDER : creates
+    GLOSSARY |o--|| DOMAIN : relates
+    GLOSSARY |o--|| CATEGORY : relates
+    GLOSSARY |o--|| FEATURE : relates
+    GLOSSARY |o--|| LABEL : describes
+    SERVICE ||--o{ DOC : relates
+    PROVIDER ||--o{ DOC : creates
+    DOMAIN ||--o{ DOC : relates
+    CATEGORY ||--o{ DOC : relates
+    FEATURE ||--o{ DOC : relates
+    LABEL ||--o{ DOC : describes
 ```
 
 ## Taxonomy Relations
 
 ```mermaid
 erDiagram
-    DOCS ||--|{ SERVICE : provides
-    DOCS ||--|{ PROVIDER : from 
-    DOCS ||--|{ DOMAIN : belongs
-    DOCS ||--|{ CATEGORY : belongs
-    DOCS ||--o{ FEATURE : contains
-    DOCS ||--o{ LABEL : has
-    DOMAIN ||--o{ DOMAIN : relates
+    GLOSSARY |o--|| SERVICE : defines
+    GLOSSARY |o--|| PROVIDER : defines
+    GLOSSARY |o--|| DOMAIN : defines
+    GLOSSARY |o--|| CATEGORY : defines
+    GLOSSARY |o--|| FEATURE : defines
+    GLOSSARY |o--|| LABEL : defines
+    SERVICE ||--o{ DOC : relates
+    PROVIDER ||--o{ DOC : creates
+    DOMAIN ||--o{ DOC : relates
+    CATEGORY ||--o{ DOC : relates
+    FEATURE ||--o{ DOC : relates
+    LABEL ||--o{ DOC : describes
+    DOMAIN }|--o{ DOMAIN : relates
     DOMAIN ||--o{ SERVICE : relates
     CATEGORY ||--o{ DOMAIN : relates
-    CATEGORY ||--o{ CATEGORY: relates
+    CATEGORY }|--o{ CATEGORY: relates
     FEATURE ||--o{ CATEGORY : relates
 ```
 
@@ -37,13 +49,55 @@ erDiagram
 
 ```mermaid
 erDiagram
-    DOCS ||--|{ SERVICE : provides
-    DOCS ||--|{ PROVIDER : from 
-    DOCS ||--|{ DOMAIN : belongs
-    DOCS ||--|{ CATEGORY : belongs
-    DOCS ||--o{ FEATURE : contains
-    DOCS ||--o{ LABEL : has
-    DOCS {
+    GLOSSARY |o--|| PROVIDER : defines
+    GLOSSARY |o--|| SERVICE : defines
+    GLOSSARY |o--|| DOMAIN : defines
+    GLOSSARY |o--|| CATEGORY : defines
+    GLOSSARY |o--|| FEATURE : defines
+    GLOSSARY |o--|| LABEL : defines
+    GLOSSARY {
+        string title
+        string linkTitle PK
+        url definitionLink
+    }
+    SERVICE }|--|{ DOC : relates
+    SERVICE ||--o{ DOMAIN : relates
+    SERVICE {
+        string term PK
+    }
+    PROVIDER }|--|{ DOC : creates
+    PROVIDER {
+        string term PK
+    }
+    DOMAIN }|--|{ DOC : relates
+    DOMAIN ||--o{ CATEGORY : relates
+    DOMAIN }|--o{ DOMAIN : relates
+    DOMAIN {
+        string term PK
+        array services FK
+        array domains FK
+    }
+    CATEGORY }|--|{ DOC : relates 
+    CATEGORY ||--o{ FEATURE : relates
+    CATEGORY }|--o{ CATEGORY: relates
+    CATEGORY {
+        string term PK
+        array services FK
+        array domains FK
+        array categories FK
+    }
+    FEATURE }|--o{ DOC : relates 
+    FEATURE {
+        string term PK
+        array services FK
+        array domains FK
+        array categories FK
+    }
+    LABEL }|--o{ DOC : describes
+    LABEL {
+        string term PK
+    }
+    DOC {
         string title
         string linkTitle
         array services FK
@@ -52,65 +106,13 @@ erDiagram
         array features FK
         array labels FK
     }
-    GLOSSARY ||--|| PROVIDER : defines
-    GLOSSARY ||--|| SERVICE : defines
-    GLOSSARY ||--|| DOMAIN : defines
-    GLOSSARY ||--|| CATEGORY: defines
-    GLOSSARY ||--|| FEATURE : defines
-    GLOSSARY ||--|| LABEL : defines
-    GLOSSARY {
-        string title
-        string linkTitle PK
-        url definitionLink
-    }
-    SERVICE {
-        string term PK
-    }
-    PROVIDER {
-        string term PK
-    }
-    DOMAIN ||--o{ SERVICE : relates
-    DOMAIN ||--o{ DOMAIN : relates
-    DOMAIN {
-        string term PK
-        array services FK
-        array domains FK
-    }
-    CATEGORY ||--|{ DOMAIN : relates
-    CATEGORY ||--o{ CATEGORY: relates
-    CATEGORY {
-        string term PK
-        array services FK
-        array domains FK
-        array categories FK
-    }
-    FEATURE ||--|{ CATEGORY : relates
-    FEATURE {
-        string term PK
-        array services FK
-        array domains FK
-        array categories FK
-    }
-    LABEL {
-        string term PK
-    }
 ```
 
 ## Physical Model
 
 ```mermaid
 erDiagram
-    DOCS ||--|{ GLOSSARY : relates
-    DOCS {
-        string title "Full title of entry"
-        string linkTitle "Short title of entry"
-        array services FK "List of terms for related services"
-        array domains FK "List of terms for related domains"
-        array categories FK "List of terms for related categories"
-        array features FK "List of terms for related features"
-        array labels FK "List of terms for related labels"
-    }
-    GLOSSARY ||--o{ GLOSSARY : relates
+    GLOSSARY }|--o{ GLOSSARY : relates
     GLOSSARY {
         string title "Full title of term"
         string linkTitle PK "Term name as referenced by docs"
@@ -118,5 +120,15 @@ erDiagram
         array services FK "List of terms for related services"
         array domains FK "List of terms for related domains"
         array categories FK "List of terms for related categories"
+    }
+    GLOSSARY }o--|{ DOC : relates
+    DOC {
+        string title "Full title of entry"
+        string linkTitle "Short title of entry"
+        array services FK "List of terms for related services"
+        array domains FK "List of terms for related domains"
+        array categories FK "List of terms for related categories"
+        array features FK "List of terms for related features"
+        array labels FK "List of terms for related labels"
     }
 ```
