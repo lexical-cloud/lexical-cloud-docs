@@ -4,9 +4,10 @@ linkTitle: "Data Model"
 weight: 20
 ---
 
-The docs of Lexical.cloud curate cloud products into hierarchical categories known as a taxonomy.  
+The docs of Lexical.cloud curate cloud products into hierarchical categories known as a taxonomy.
+Taxonomy terms are populated by metadata from each doc and glossary entry.
 
-{{< alert title="Work in Progress" >}}
+{{< alert title="Help us improve!" >}}
 Use "Create docs issue" to submit ideas for improving the below illustrations. Thanks!
 {{< /alert >}}
 
@@ -39,6 +40,39 @@ erDiagram
 | Feature | Specific functionality from a product | Alerts, Reports |
 | Label | Attribute of a product | Deprecated |
 
+
+## Example Metadata
+
+Let's explore **doc** entries for monitoring products:
+
+{{< tabpane >}}
+{{< tab header="Amazon CloudWatch" >}}
+{{< readfile file="docs/monitor/aws/cloudwatch.md" code="true" lang="yaml" >}}
+{{< /tab >}}
+{{< tab header="Azure Monitor" >}}
+{{< readfile file="docs/monitor/azure/monitor.md" code="true" lang="yaml" >}}
+{{< /tab >}}
+{{< tab header="Google Cloud Monitoring" >}}
+{{< readfile file="docs/monitor/gcp/cloud-monitoring.md" code="true" lang="yaml" >}}
+{{< /tab >}}
+{{< /tabpane >}}
+
+And **glossary** entries that support them:
+
+{{< tabpane >}}
+{{< tab header="Observability" >}}
+{{< readfile file="glossary/observability.md" code="true" lang="yaml" >}}
+{{< /tab >}}
+{{< tab header="Telemetry Data" >}}
+{{< readfile file="glossary/telemetry-data.md" code="true" lang="yaml" >}}
+{{< /tab >}}
+{{< tab header="Open Telemetry" >}}
+{{< readfile file="glossary/open-telemetry.md" code="true" lang="yaml" >}}
+{{< /tab >}}
+{{< tab header="Alerts" >}}
+{{< readfile file="glossary/alerts.md" code="true" lang="yaml" >}}
+{{< /tab >}}
+{{< /tabpane >}}
 
 
 ## Term Relations
