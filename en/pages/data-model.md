@@ -112,7 +112,8 @@ erDiagram
 
 ## Logical Data Model
 
-The nested structure of the data is not great for illustrating in ER diagrams.
+Terms referenced in doc entries inhert their ancestors from the glossary.
+
 
 ```mermaid
 erDiagram
@@ -153,14 +154,14 @@ erDiagram
         array domains FK
         array categories FK
     }
-    FEATURE }|--o{ DOC : relates 
+    FEATURE }o--o{ DOC : relates 
     FEATURE {
         string term PK
         array services FK
         array domains FK
         array categories FK
     }
-    LABEL }|--o{ DOC : describes
+    LABEL }o|--o{ DOC : describes
     LABEL {
         string term PK
     }
