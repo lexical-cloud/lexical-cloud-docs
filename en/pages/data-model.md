@@ -4,16 +4,21 @@ linkTitle: "Data Model"
 weight: 20
 ---
 
-The docs of Lexical.cloud curate cloud products into hierarchical categories known as a taxonomy.
-Taxonomy terms are populated by metadata from each doc and glossary entry.
+Lexical.cloud curates cloud products into hierarchical groups, also known as a taxonomy.
+Taxonomy terms are populated by metadata from each entry in our docs and glossary.
+
+| Entry Type | Description | [Directory in project](https://github.com/lexical-cloud/lexical-cloud-docs/) |
+| ---------- | ----------- | ------- |
+| Doc | Documented cloud products | en/docs/{service}/{provider}/ | 
+| Glossary | Terms used in taxonomy by docs | en/glossary/ |
 
 {{< alert title="Help us improve!" >}}
 Use "Create docs issue" to submit ideas for improving the below illustrations. Thanks!
 {{< /alert >}}
 
-## Taxonomy Entities
+## Taxonomy Group
 
-Terms for each entity originate in the docs. The glossary independently defines a term.
+Terms for each group originate in the docs. The glossary independently defines a term.
 
 ```mermaid
 erDiagram
@@ -31,12 +36,12 @@ erDiagram
     LABEL ||--o{ DOC : originates
 ```
 
-| Entity | Description | Example Terms |
+| Group | Description | Example Terms |
 | ------ | ---------- | ------- |
 | Service | Purpose of a cloud product | Monitor, Governance  |
 | Provider | Originator of a cloud product | AWS, Azure, Google Cloud |
-| Domain | Collection of services with intersecting categories | Observability, Systems management |
-| Category | Group specific to a domain and/or service | Cost management, Dashboards |
+| Domain | Collection of services with intersecting categories | Observability, Modernization |
+| Category | Group specific to a domain and/or service | Auditing, Dashboards |
 | Feature | Specific functionality from a product | Alerts, Reports |
 | Label | Attribute of a product | Deprecated |
 
@@ -74,10 +79,12 @@ And **glossary** entries that support them:
 {{< /tab >}}
 {{< /tabpane >}}
 
+Notice the relationship of glossary `linkTitle` in the doc entries.
+
 
 ## Term Relations
 
-The glossary optionally relates each term to ancestor entities. Many docs reference each term.
+The glossary optionally relates each term to ancestor groups. Many docs reference each term.
 
 ```mermaid
 erDiagram
@@ -100,7 +107,7 @@ erDiagram
     FEATURE ||--o{ CATEGORY : relates
 ```
 
-| Entity | Ancestors | Descendants |
+| Group | Ancestors | Descendants |
 | ------ | ---------- | ------- |
 | Service | N/A | Domain, Category, Feature |
 | Provider | N/A | N/A |
@@ -109,11 +116,11 @@ erDiagram
 | Feature | Domain, Service, Category  | N/A |
 | Label | N/A  | N/A |
 
+Domain and Category can have subgroups. i.e. `container orchestrator` and `kubernetes`
 
 ## Logical Data Model
 
 Terms referenced in doc entries inhert their ancestors from the glossary.
-
 
 ```mermaid
 erDiagram
@@ -161,7 +168,7 @@ erDiagram
         array domains FK
         array categories FK
     }
-    LABEL }o|--o{ DOC : describes
+    LABEL }o--o{ DOC : describes
     LABEL {
         string term PK
     }
@@ -175,6 +182,7 @@ erDiagram
         array labels FK
     }
 ```
+The model flexibility incurs some complexity and potentially duplicated relationships.
 
 ## Physical Data Model
 
@@ -202,3 +210,5 @@ erDiagram
         array labels FK "List of terms for related labels"
     }
 ```
+
+Each doc entry should minimally list or inherit a service, domain and category.
