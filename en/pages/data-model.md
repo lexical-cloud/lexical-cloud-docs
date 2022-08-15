@@ -79,7 +79,7 @@ And **glossary** entries that support them:
 {{< /tab >}}
 {{< /tabpane >}}
 
-Notice the relationship of glossary `linkTitle` in the doc entries.
+Notice the relationship of glossary `linkTitle` with the doc entries.
 
 
 ## Term Relations
@@ -176,6 +176,7 @@ erDiagram
         string title
         string linkTitle
         array services FK
+        array providers FK
         array domains FK
         array categories FK
         array features FK
@@ -204,6 +205,7 @@ erDiagram
         string title "Full title of entry"
         string linkTitle "Short title of entry"
         array services FK "List of terms for related services"
+        array providers FK "List of terms for related providers"
         array domains FK "List of terms for related domains"
         array categories FK "List of terms for related categories"
         array features FK "List of terms for related features"
