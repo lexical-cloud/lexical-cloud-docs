@@ -1,7 +1,7 @@
 openapi: 3.0.0
 
 info:
-  version: 0.1.0
+  version: 0.1.1
   title: Lexical.cloud API
   description: Queryable interface for the data curated by Lexical.cloud
 
@@ -242,17 +242,19 @@ components:
     Relation:
       type: object
       properties:
-        hierarchical:
-          $ref: '#/components/schemas/Taxonomy'
-          description: Relations by hierarchy of term
         instance:
           type: array 
           items:
             type: string
-          description: Instances of documentated products for term
-        intersection:
-          $ref: '#/components/schemas/Taxonomy'
-          description: Intersections with terms outside hierarchy
+          description: Instances of documented products for given term
+        intersect:
+          allOf:
+            - $ref: '#/components/schemas/Taxonomy'
+          description: Intersection of terms from instances with hierarchy for given term
+        symdiff:
+          allOf:
+            - $ref: '#/components/schemas/Taxonomy'
+          description: Symmetric Difference of terms from instances with hierarchy for given term
 
     Term:
       type: object
@@ -261,7 +263,8 @@ components:
           type: string
           description: Identifier of term
         definition:
-          $ref: '#/components/schemas/Definition'
+          allOf:
+            - $ref: '#/components/schemas/Definition'
           description: Definition of term
         type:
           type: string
