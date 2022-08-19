@@ -6,8 +6,8 @@ info:
   description: Queryable interface for the data curated by Lexical.cloud
 
 tags:
-  - name: docs 
-    description: Lookup entries for documented cloud products
+  - name: products 
+    description: Lookup entries for cloud products
   - name: glossary
     description: Lookup glossary terms for cloud computing
   - name: taxonomy
@@ -15,11 +15,11 @@ tags:
 
 paths:
 
-  /docs/{serviceId}/{providerId}/{docId}:
+  /products/{serviceId}/{providerId}/{productId}:
     get:
-      description: Returns a documented entry for a service and provider
+      description: Returns a product entry for a service and provider
       tags:
-        - docs
+        - products
       parameters:
         - name: serviceId 
           in: path
@@ -33,15 +33,15 @@ paths:
           schema:
             type: string
           description: Identifier for the provider of the service
-        - name: docId 
+        - name: productId 
           in: path
           required: true
           schema:
             type: string
-          description: Identifier for the documented entry
+          description: Identifier for the product entry
       responses:
         '200':
-          description: Successfully returned a doc
+          description: Successfully returned a product entry
           content:
             application/json:
               schema:
@@ -133,9 +133,9 @@ paths:
               schema:
                 $ref: '#/components/schemas/Relation'
 
-  /{taxonomyId}/{termId}/docs:
+  /{taxonomyId}/{termId}/products:
     get:
-      description: Returns documented entries for a taxonomy term
+      description: Returns product entries for a taxonomy term
       tags:
         - taxonomy
       parameters:
@@ -160,7 +160,7 @@ paths:
           description: Identifier for term in the taxonomy
       responses:
         '200':
-          description: Successfully returned documented entries for a taxonomy term
+          description: Successfully returned product entries for a taxonomy term
           content:
             application/json:
               schema:
@@ -246,7 +246,7 @@ components:
           type: array 
           items:
             type: string
-          description: Instances of documented products for given term
+          description: Instances of product entries for given term
         intersect:
           allOf:
             - $ref: '#/components/schemas/Taxonomy'

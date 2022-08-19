@@ -5,12 +5,12 @@ weight: 20
 ---
 
 Lexical.cloud curates cloud products into hierarchical groups, also known as a taxonomy.
-Taxonomy terms are populated by metadata from each entry in our docs and glossary.
+Taxonomy terms are populated by metadata from each product and glossary entry.
 
 | Entry Type | Description | [Directory in project](https://github.com/lexical-cloud/lexical-cloud-docs/) |
 | ---------- | ----------- | ------- |
-| Doc | Documented cloud products | en/docs/{service}/{provider}/ | 
-| Glossary | Terms used in taxonomy by docs | en/glossary/ |
+| Product | Documented cloud products | en/products/{service}/{provider}/ | 
+| Glossary | Terms used in taxonomy by products | en/glossary/ |
 
 {{< alert title="Help us improve!" >}}
 Use "Create docs issue" to submit ideas for improving the below illustrations. Thanks!
@@ -18,7 +18,7 @@ Use "Create docs issue" to submit ideas for improving the below illustrations. T
 
 ## Taxonomy Group
 
-Terms for each group originate in the docs. The glossary independently defines a term.
+Terms for each group originate in products. The glossary independently defines a term.
 
 ```mermaid
 erDiagram
@@ -28,12 +28,12 @@ erDiagram
     GLOSSARY |o..|| CATEGORY : defines
     GLOSSARY |o..|| FEATURE : defines
     GLOSSARY |o..|| LABEL : defines
-    SERVICE ||--o{ DOC : originates
-    PROVIDER ||--o{ DOC : originates
-    DOMAIN ||--o{ DOC : originates
-    CATEGORY ||--o{ DOC : originates
-    FEATURE ||--o{ DOC : originates
-    LABEL ||--o{ DOC : originates
+    SERVICE ||--o{ PRODUCT : originates
+    PROVIDER ||--o{ PRODUCT : originates
+    DOMAIN ||--o{ PRODUCT : originates
+    CATEGORY ||--o{ PRODUCT : originates
+    FEATURE ||--o{ PRODUCT : originates
+    LABEL ||--o{ PRODUCT : originates
 ```
 
 | Group | Description | Example Terms |
@@ -48,17 +48,17 @@ erDiagram
 
 ## Example Metadata
 
-Let's explore **doc** entries for monitoring products:
+Let's explore **product** entries for monitoring products:
 
 {{< tabpane >}}
 {{< tab header="Amazon CloudWatch" >}}
-{{< readfile file="docs/monitor/aws/cloudwatch.md" code="true" lang="yaml" >}}
+{{< readfile file="products/monitor/aws/cloudwatch.md" code="true" lang="yaml" >}}
 {{< /tab >}}
 {{< tab header="Azure Monitor" >}}
-{{< readfile file="docs/monitor/azure/monitor.md" code="true" lang="yaml" >}}
+{{< readfile file="products/monitor/azure/monitor.md" code="true" lang="yaml" >}}
 {{< /tab >}}
 {{< tab header="Google Cloud Monitoring" >}}
-{{< readfile file="docs/monitor/gcp/cloud-monitoring.md" code="true" lang="yaml" >}}
+{{< readfile file="products/monitor/gcp/cloud-monitoring.md" code="true" lang="yaml" >}}
 {{< /tab >}}
 {{< /tabpane >}}
 
@@ -79,12 +79,12 @@ And **glossary** entries that support them:
 {{< /tab >}}
 {{< /tabpane >}}
 
-Notice the relationship of glossary `linkTitle` with the doc entries.
+Notice the relationship of glossary `linkTitle` with the product entries.
 
 
 ## Term Relations
 
-The glossary optionally relates each term to ancestor groups. Many docs reference each term.
+The glossary optionally relates each term to ancestor groups. Many products reference each term.
 
 ```mermaid
 erDiagram
@@ -94,12 +94,12 @@ erDiagram
     GLOSSARY |o..|| CATEGORY : defines
     GLOSSARY |o..|| FEATURE : defines
     GLOSSARY |o..|| LABEL : defines
-    SERVICE ||--o{ DOC : relates
-    PROVIDER ||--o{ DOC : creates
-    DOMAIN ||--o{ DOC : relates
-    CATEGORY ||--o{ DOC : relates
-    FEATURE ||--o{ DOC : relates
-    LABEL ||--o{ DOC : describes
+    SERVICE ||--o{ PRODUCT : relates
+    PROVIDER ||--o{ PRODUCT : creates
+    DOMAIN ||--o{ PRODUCT : relates
+    CATEGORY ||--o{ PRODUCT : relates
+    FEATURE ||--o{ PRODUCT : relates
+    LABEL ||--o{ PRODUCT : describes
     DOMAIN }|--o{ DOMAIN : relates
     DOMAIN ||--o{ SERVICE : relates
     CATEGORY ||--o{ DOMAIN : relates
@@ -120,7 +120,7 @@ Domain and Category can have subgroups. i.e. `container orchestrator` and `kuber
 
 ## Logical Data Model
 
-Terms referenced in doc entries inhert their ancestors from the glossary.
+Terms referenced in product entries inhert their ancestors from the glossary.
 
 ```mermaid
 erDiagram
@@ -135,16 +135,16 @@ erDiagram
         string linkTitle PK
         url definitionLink
     }
-    SERVICE }|--|{ DOC : relates
+    SERVICE }|--|{ PRODUCT : relates
     SERVICE }o--o{ DOMAIN : relates
     SERVICE {
         string term PK
     }
-    PROVIDER }|--|{ DOC : creates
+    PROVIDER }|--|{ PRODUCT : creates
     PROVIDER {
         string term PK
     }
-    DOMAIN }|--|{ DOC : relates
+    DOMAIN }|--|{ PRODUCT : relates
     DOMAIN }o--o{ CATEGORY : relates
     DOMAIN }|--o{ DOMAIN : relates
     DOMAIN {
@@ -152,7 +152,7 @@ erDiagram
         array services FK
         array domains FK
     }
-    CATEGORY }|--|{ DOC : relates 
+    CATEGORY }|--|{ PRODUCT : relates 
     CATEGORY }o--o{ FEATURE : relates
     CATEGORY }|--o{ CATEGORY: relates
     CATEGORY {
@@ -161,18 +161,18 @@ erDiagram
         array domains FK
         array categories FK
     }
-    FEATURE }o--o{ DOC : relates 
+    FEATURE }o--o{ PRODUCT : relates 
     FEATURE {
         string term PK
         array services FK
         array domains FK
         array categories FK
     }
-    LABEL }o--o{ DOC : describes
+    LABEL }o--o{ PRODUCT : describes
     LABEL {
         string term PK
     }
-    DOC {
+    PRODUCT {
         string title
         string linkTitle
         array services FK
@@ -187,21 +187,21 @@ The model flexibility incurs some complexity and potentially duplicated relation
 
 ## Physical Data Model
 
-Each doc specifes minimal taxonomy terms and infers relationships from the glossary.
+Each product specifes minimal taxonomy terms and infers relationships from the glossary.
 
 ```mermaid
 erDiagram
     GLOSSARY }o--o{ GLOSSARY : relates
     GLOSSARY {
         string title "Full title of term"
-        string linkTitle PK "Term name as referenced by docs"
+        string linkTitle PK "Term name as referenced by products"
         url definitionLink "Optional link to definition"
         array services FK "List of terms for related services"
         array domains FK "List of terms for related domains"
         array categories FK "List of terms for related categories"
     }
-    GLOSSARY }o..o{ DOC : relates
-    DOC {
+    GLOSSARY }o..o{ PRODUCT : relates
+    PRODUCT {
         string title "Full title of entry"
         string linkTitle "Short title of entry"
         array services FK "List of terms for related services"
@@ -213,4 +213,4 @@ erDiagram
     }
 ```
 
-Each doc entry should minimally list or inherit a service, domain and category.
+Each product entry should minimally list or inherit a service, domain and category.
