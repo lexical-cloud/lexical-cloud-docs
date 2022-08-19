@@ -1,5 +1,5 @@
 ---
-services:
+services: 
   - "ai"
 providers:
   - "gcp"
@@ -9,6 +9,7 @@ domains:
 categories:
   - "model training"
   - "no-code"
-title: "Google Cloud AutoML"
-linkTitle: "Google Cloud AutoML"
+  - "sql compliant"
+title: "Google Cloud BigQuery ML"
+linkTitle: "Google Cloud BigQuery ML"
 ---
