@@ -5,12 +5,13 @@ weight: 20
 ---
 
 Lexical.cloud curates cloud products into hierarchical groups, also known as a taxonomy.
-Taxonomy terms are populated by metadata from each product and glossary entry.
+Taxonomy terms are populated by metadata from each product, product model and glossary entry.
 
 | Entry Type | Description | [Directory in project](https://github.com/lexical-cloud/lexical-cloud-docs/) |
 | ---------- | ----------- | ------- |
 | Product | Documented cloud products | en/products/{service}/{provider}/ | 
-| Glossary | Terms used in taxonomy by products | en/glossary/ |
+| Product Model | Models of cloud products | en/products/{service}/{provider}/{modelId} | 
+| Glossary | Terms in product taxonomy | en/glossary/ |
 
 {{< alert title="Help us improve!" >}}
 Use "Create docs issue" to submit ideas for improving the below illustrations. Thanks!
@@ -33,7 +34,10 @@ erDiagram
     DOMAIN ||--o{ PRODUCT : originates
     CATEGORY ||--o{ PRODUCT : originates
     FEATURE ||--o{ PRODUCT : originates
+    FEATURE ||--o{ PRODUCT-MODEL : originates
     LABEL ||--o{ PRODUCT : originates
+    LABEL ||--o{ PRODUCT-MODEL : originates
+    PRODUCT ||--o{ PRODUCT-MODEL : has
 ```
 
 | Group | Description | Example Terms |
@@ -81,6 +85,30 @@ And **glossary** entries that support them:
 
 Notice the relationship of glossary `linkTitle` with the product entries.
 
+##### What about **product model** entries?
+
+The products above did not have any models, but an example would be:
+
+```
+features:
+  - "example feature"
+labels:
+  - "example label"
+title: "Product Name (model name)"
+linkTitle: "Model Name"
+productHierarchyTier: "model"
+```
+
+Notice that services, categories and domains were not listed. They're inherited from the product. It's possible to list additional entries for all groups, but that is not illustrated on this page.
+
+**Products vs Product Models**
+
+| Difference | Product | Product Model |
+| ---------- | ------- | ------------- |
+| Location | `{product-path}/product-name.md` | `{product-path}/product-name/model-name.md` |
+| Attribute | N/A | `productHierarchyTier="model"` | 
+| Groups | can inherit from glossary | also inherits from product |   
+
 
 ## Term Relations
 
@@ -88,6 +116,7 @@ The glossary optionally relates each term to ancestor groups. Many products refe
 
 ```mermaid
 erDiagram
+    PRODUCT ||--o{ PRODUCT-MODEL : has
     GLOSSARY |o..|| SERVICE : defines
     GLOSSARY |o..|| PROVIDER : defines
     GLOSSARY |o..|| DOMAIN : defines
@@ -99,7 +128,9 @@ erDiagram
     DOMAIN ||--o{ PRODUCT : relates
     CATEGORY ||--o{ PRODUCT : relates
     FEATURE ||--o{ PRODUCT : relates
+    FEATURE ||--o{ PRODUCT-MODEL : relates
     LABEL ||--o{ PRODUCT : describes
+    LABEL ||--o{ PRODUCT-MODEL : describes
     DOMAIN }|--o{ DOMAIN : relates
     DOMAIN ||--o{ SERVICE : relates
     CATEGORY ||--o{ DOMAIN : relates
@@ -162,6 +193,7 @@ erDiagram
         array categories FK
     }
     FEATURE }o--o{ PRODUCT : relates 
+    FEATURE }o--o{ PRODUCT-MODEL : relates 
     FEATURE {
         string term PK
         array services FK
@@ -169,6 +201,7 @@ erDiagram
         array categories FK
     }
     LABEL }o--o{ PRODUCT : describes
+    LABEL }o--o{ PRODUCT-MODEL : describes
     LABEL {
         string term PK
     }
@@ -179,6 +212,13 @@ erDiagram
         array providers FK
         array domains FK
         array categories FK
+        array features FK
+        array labels FK
+    }
+    PRODUCT ||--o{ PRODUCT-MODEL : relates
+    PRODUCT-MODEL {
+        string title
+        string linkTitle
         array features FK
         array labels FK
     }
@@ -213,4 +253,4 @@ erDiagram
     }
 ```
 
-Each product entry should minimally list or inherit a service, domain and category.
+Each product and model entry should minimally list or inherit a service, domain and category.
