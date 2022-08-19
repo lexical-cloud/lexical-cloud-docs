@@ -1,7 +1,7 @@
 openapi: 3.0.0
 
 info:
-  version: 0.1.1
+  version: 0.2.0
   title: Lexical.cloud API
   description: Queryable interface for the data curated by Lexical.cloud
 
@@ -45,7 +45,45 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Doc'
+                $ref: '#/components/schemas/Product'
+
+  /products/{serviceId}/{providerId}/{productId}/{modelId}:
+    get:
+      description: Returns a product model entry for a service and provider
+      tags:
+        - products
+      parameters:
+        - name: serviceId 
+          in: path
+          required: true
+          schema:
+            type: string
+          description: Identifier for the service being offered
+        - name: providerId 
+          in: path
+          required: true
+          schema:
+            type: string
+          description: Identifier for the provider of the service
+        - name: productId 
+          in: path
+          required: true
+          schema:
+            type: string
+          description: Identifier for the product entry
+        - name: modelId 
+          in: path
+          required: true
+          schema:
+            type: string
+          description: Identifier for the product model
+      responses:
+        '200':
+          description: Successfully returned a product model entry
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProductModel'
 
   /glossary/{termId}:
     get:
@@ -166,7 +204,7 @@ paths:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/Doc'
+                  $ref: '#/components/schemas/Product'
 
 components:
 
@@ -182,27 +220,46 @@ components:
             url:
               type: string
               description: Link to definition
-            permalink:
-              type: string
+            links:
+              $ref: '#/components/schemas/Links'
               description: Path to definition entry
           required:
             - title
             - permalink
         - $ref: '#/components/schemas/Taxonomy'
 
-    Doc:
+    Product:
       allOf:
         - type: object
           properties:
             name:
               type: string
-              description: Full name of entry
-            permalink:
-              type: string
-              description: Path to entry
+              description: Name of product entry
+            links:
+              $ref: '#/components/schemas/ProductLinks'
+              description: Path to product instance
           required:
             - name
-            - permalink
+            - links
+        - $ref: '#/components/schemas/Taxonomy'
+
+    ProductModel:
+      allOf:
+        - type: object
+          properties:
+            name:
+              type: string
+              description: Name of product entry
+            model:
+              type: string
+              description: Name of product model
+            links:
+              $ref: '#/components/schemas/ProductModelLinks'
+              description: Path to product instance
+          required:
+            - name
+            - model
+            - links
         - $ref: '#/components/schemas/Taxonomy'
 
     Taxonomy:
@@ -280,4 +337,33 @@ components:
         - type
         - name
         - permalink
+
+    Links:
+      type: object
+      properties:
+        self:
+          type: string
+          description: Path to self entry
+      required:
+        - self
+
+    ProductLinks:
+      allOf:
+        - $ref: '#/components/schemas/Links'
+        - type: object
+          properties:
+            models:
+              type: array 
+              items:
+                type: string
+              description: Path to product models
+
+    ProductModelLinks:
+      allOf:
+        - $ref: '#/components/schemas/Links'
+        - type: object
+          properties:
+            parent:
+              type: string
+              description: Path to parent
 
