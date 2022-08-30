@@ -9,7 +9,7 @@ Taxonomy terms are populated by metadata in each product, product tier and gloss
 
 | Entry Type | Description | [Directory in product catalog](https://github.com/lexical-cloud/lexical-cloud-docs/en/) |
 | ---------- | ----------- | ------- |
-| Product | Documented cloud products | products/{service}/{provider}/ | 
+| Product | Documented cloud products | products/{service}/{provider}/{product} | 
 | Product Tier | Tiers of cloud products | products/{service}/{provider}/{product}/{tier}/{tierProduct} | 
 | Glossary | Terms in product taxonomy | glossary/ |
 
