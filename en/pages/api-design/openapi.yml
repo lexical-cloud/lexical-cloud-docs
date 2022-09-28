@@ -47,9 +47,9 @@ paths:
               schema:
                 $ref: '#/components/schemas/Product'
 
-  /products/{serviceId}/{providerId}/{productId}/{modelId}:
+  /products/{serviceId}/{providerId}/{productId}/{tierId}/{tierProductId}:
     get:
-      description: Returns a product model entry for a service and provider
+      description: Returns a tiered product entry for a service and provider. Tiers can be nested
       tags:
         - products
       parameters:
@@ -71,15 +71,23 @@ paths:
           schema:
             type: string
           description: Identifier for the product entry
-        - name: modelId 
+        - name: tierId 
           in: path
           required: true
           schema:
             type: string
-          description: Identifier for the product model
+            enum:
+              - components 
+              - models
+        - name: tierProductId 
+          in: path
+          required: true
+          schema:
+            type: string
+          description: Identifier for the tiered product entry
       responses:
         '200':
-          description: Successfully returned a product model entry
+          description: Successfully returned a tiered product entry
           content:
             application/json:
               schema:
@@ -243,6 +251,25 @@ components:
             - links
         - $ref: '#/components/schemas/Taxonomy'
 
+    ProductComponent:
+      allOf:
+        - type: object
+          properties:
+            name:
+              type: string
+              description: Name of product entry
+            component:
+              type: string
+              description: Name of product component
+            links:
+              $ref: '#/components/schemas/ProductLinks'
+              description: Path to product instance
+          required:
+            - name
+            - component
+            - links
+        - $ref: '#/components/schemas/Taxonomy'
+
     ProductModel:
       allOf:
         - type: object
@@ -254,7 +281,7 @@ components:
               type: string
               description: Name of product model
             links:
-              $ref: '#/components/schemas/ProductModelLinks'
+              $ref: '#/components/schemas/ProductLinks'
               description: Path to product instance
           required:
             - name
@@ -352,18 +379,16 @@ components:
         - $ref: '#/components/schemas/Links'
         - type: object
           properties:
+            parent:
+              type: string
+              description: Path to parent
+            components:
+              type: array 
+              items:
+                type: string
+              description: Path to product components 
             models:
               type: array 
               items:
                 type: string
               description: Path to product models
-
-    ProductModelLinks:
-      allOf:
-        - $ref: '#/components/schemas/Links'
-        - type: object
-          properties:
-            parent:
-              type: string
-              description: Path to parent
-

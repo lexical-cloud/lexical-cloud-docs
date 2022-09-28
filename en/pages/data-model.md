@@ -5,13 +5,13 @@ weight: 20
 ---
 
 Lexical.cloud curates cloud products into hierarchical groups, also known as a taxonomy.
-Taxonomy terms are populated by metadata from each product, product model and glossary entry.
+Taxonomy terms are populated by metadata in each product, product tier and glossary entry.
 
-| Entry Type | Description | [Directory in project](https://github.com/lexical-cloud/lexical-cloud-docs/) |
+| Entry Type | Description | [Directory in product catalog](https://github.com/lexical-cloud/lexical-cloud-docs/en/) |
 | ---------- | ----------- | ------- |
-| Product | Documented cloud products | en/products/{service}/{provider}/ | 
-| Product Model | Models of cloud products | en/products/{service}/{provider}/{modelId} | 
-| Glossary | Terms in product taxonomy | en/glossary/ |
+| Product | Documented cloud products | products/{service}/{provider}/{product} | 
+| Product Tier | Tiers of cloud products | products/{service}/{provider}/{product}/{tier}/{tierProduct} | 
+| Glossary | Terms in product taxonomy | glossary/ |
 
 {{< alert title="Help us improve!" >}}
 Use "Create docs issue" to submit ideas for improving the below illustrations. Thanks!
@@ -34,10 +34,11 @@ erDiagram
     DOMAIN ||--o{ PRODUCT : originates
     CATEGORY ||--o{ PRODUCT : originates
     FEATURE ||--o{ PRODUCT : originates
-    FEATURE ||--o{ PRODUCT-MODEL : originates
+    FEATURE ||--o{ PRODUCT-TIER : originates
     LABEL ||--o{ PRODUCT : originates
-    LABEL ||--o{ PRODUCT-MODEL : originates
-    PRODUCT ||--o{ PRODUCT-MODEL : has
+    LABEL ||--o{ PRODUCT-TIER : originates
+    PRODUCT ||--o{ PRODUCT-TIER : has
+    PRODUCT-TIER ||--o{ PRODUCT-TIER : has
 ```
 
 | Group | Description | Example Terms |
@@ -85,11 +86,13 @@ And **glossary** entries that support them:
 
 Notice the relationship of glossary `linkTitle` with the product entries.
 
-##### What about **product model** entries?
+##### What about **product tier** entries?
 
-The products above did not have any models, but an example would be:
+The products above did not have any product tiers, but examples would be:
 
-```
+{{< tabpane >}}
+{{< tab header="Model" >}}
+---
 features:
   - "example feature"
 labels:
@@ -97,17 +100,38 @@ labels:
 title: "Product Name (model name)"
 linkTitle: "Model Name"
 productHierarchyTier: "model"
-```
+---
+{{< /tab >}}
+{{< tab header="Component" >}}
+---
+features:
+  - "example feature"
+labels:
+  - "example label"
+title: "Product Component Name"
+linkTitle: "Component Name"
+productHierarchyTier: "component"
+---
+{{< /tab >}}
+{{< /tabpane >}}
 
 Notice that services, categories and domains were not listed. They're inherited from the product. It's possible to list additional entries for all groups, but that is not illustrated on this page.
 
-**Products vs Product Models**
+**Products vs Product Tiers**
 
-| Difference | Product | Product Model |
+| Difference | Product | Product Tier |
 | ---------- | ------- | ------------- |
-| Location | `{product-path}/product-name.md` | `{product-path}/product-name/model-name.md` |
-| Attribute | N/A | `productHierarchyTier="model"` | 
+| Location | `{product-path}/product-id.md` | `{product-path}/product-id/tier-id/tier-product-id.md` |
+| Attribute | N/A | `productHierarchyTier="model" or "component"` | 
 | Groups | can inherit from glossary | also inherits from product |   
+
+
+**Models vs Components**
+
+| Difference | Model | Component |
+| ---------- | ------- | ------------- |
+| Purpose | Types of a product | Sub-products |
+| Nesting | Under product or component | Under product |
 
 
 ## Term Relations
@@ -116,7 +140,7 @@ The glossary optionally relates each term to ancestor groups. Many products refe
 
 ```mermaid
 erDiagram
-    PRODUCT ||--o{ PRODUCT-MODEL : has
+    PRODUCT ||--o{ PRODUCT-TIER : has
     GLOSSARY |o..|| SERVICE : defines
     GLOSSARY |o..|| PROVIDER : defines
     GLOSSARY |o..|| DOMAIN : defines
@@ -128,9 +152,9 @@ erDiagram
     DOMAIN ||--o{ PRODUCT : relates
     CATEGORY ||--o{ PRODUCT : relates
     FEATURE ||--o{ PRODUCT : relates
-    FEATURE ||--o{ PRODUCT-MODEL : relates
+    FEATURE ||--o{ PRODUCT-TIER : relates
     LABEL ||--o{ PRODUCT : describes
-    LABEL ||--o{ PRODUCT-MODEL : describes
+    LABEL ||--o{ PRODUCT-TIER : describes
     DOMAIN }|--o{ DOMAIN : relates
     DOMAIN ||--o{ SERVICE : relates
     CATEGORY ||--o{ DOMAIN : relates
@@ -193,7 +217,7 @@ erDiagram
         array categories FK
     }
     FEATURE }o--o{ PRODUCT : relates 
-    FEATURE }o--o{ PRODUCT-MODEL : relates 
+    FEATURE }o--o{ PRODUCT-TIER : relates 
     FEATURE {
         string term PK
         array services FK
@@ -201,7 +225,7 @@ erDiagram
         array categories FK
     }
     LABEL }o--o{ PRODUCT : describes
-    LABEL }o--o{ PRODUCT-MODEL : describes
+    LABEL }o--o{ PRODUCT-TIER : describes
     LABEL {
         string term PK
     }
@@ -215,15 +239,18 @@ erDiagram
         array features FK
         array labels FK
     }
-    PRODUCT ||--o{ PRODUCT-MODEL : relates
-    PRODUCT-MODEL {
+    PRODUCT ||--o{ PRODUCT-TIER : relates
+    PRODUCT-TIER ||--o{ PRODUCT-TIER : relates
+    PRODUCT-TIER {
         string title
         string linkTitle
+        string productHierarchyTier
+        string parentProductTier
         array features FK
         array labels FK
     }
 ```
-The model flexibility incurs some complexity and potentially duplicated relationships.
+The model flexibility incurs some complexity and potential of duplicate relationships.
 
 ## Physical Data Model
 
@@ -241,7 +268,9 @@ erDiagram
         array categories FK "List of terms for related categories"
     }
     GLOSSARY }o..o{ PRODUCT : relates
+    PRODUCT ||--o{ PRODUCT : "has tiers"
     PRODUCT {
+        string productHierarchyPath PK "Nested path to product or tier"
         string title "Full title of entry"
         string linkTitle "Short title of entry"
         array services FK "List of terms for related services"
@@ -250,7 +279,8 @@ erDiagram
         array categories FK "List of terms for related categories"
         array features FK "List of terms for related features"
         array labels FK "List of terms for related labels"
+        string productHierarchyTier "Optional tier of product hierarchy "
     }
 ```
 
-Each product and model entry should minimally list or inherit a service, domain and category.
+Each product and tier entry should minimally list or inherit a service, domain and category. The `productHierarchyPath` is not an actual column but the physical path in the directory tree.
