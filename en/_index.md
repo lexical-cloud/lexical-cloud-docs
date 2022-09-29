@@ -4,9 +4,16 @@ linkTitle: Lexical.cloud
 ---
 
 {{% pageinfo %}}
-### Under Construction!
+### New Features!
 
-Thanks for your patience as this project begins :) 
+  * Products now support components and models.
+  * Analysis of site content is available. [(See the latest)](/blog/analysis/v0-1-0/)
+
+Stay tuned for more coming soon!
+
+#### First time visitor?
+
+Thanks for your patience as this project grows :) 
 Find out what's coming next in our [projects on Github](https://github.com/orgs/lexical-cloud/projects).
 For the best experience and editing capabilities, use a large display to navigate this site until it improves.   
 {{% /pageinfo %}}
