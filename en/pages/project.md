@@ -59,6 +59,9 @@ flowchart TD
   U3 -->|develop| G3 -->|leverage| G2
   U1 -->|explore| G2
   U2 -->|maintain| G2
+%% styles
+  style G1 fill:white,stroke-dasharray:5;
+  classDef clickable fill:#3176d9,color:white
 %% interactions
   click G2 "#lexicalcloud"
 ```
@@ -67,9 +70,9 @@ flowchart TD
 
 Given `Lexical.cloud` is a `community data` project \
 when `contributors` _maintain_ the `community data` \
-then `consumers` can _explore_ the `community data`.
+then `community data` _feeds_ the `frontend` and `backend`.
 
-Given `Lexical.cloud` will expose data in a `backend`\
+Given `Lexical.cloud` exposes data in a `backend` \
 when `community data` _feeds_ into the `backend` \
 then `apps` can _leverage_ the `backend`.
 
@@ -109,6 +112,10 @@ flowchart TD
   G4 -->|feeds| G5
   G4 -->|feeds| G6
   G2 -->|leverage| G5
+%% styles
+  classDef clickable fill:#3176d9,color:white
+  style G1 fill:white,stroke-dasharray:5;
+  style G3 fill:white,stroke:#30638E,stroke-dasharray:10,stroke-width:3px;
 %% interactions
   click G4 "#community-data"
   click G5 "#backend"
@@ -189,7 +196,20 @@ flowchart TD
   G2 -->|leverage| G5
   I1 -->|feeds| P1 -->|produces| O1 
   I1 -->|feeds| P2 -->|produces| O2
+%% styles
+  classDef clickable fill:#3176d9,color:white
+  style G1 fill:white,stroke-dasharray:5;
+  style G3 fill:white,stroke-dasharray:5;
+  style G4 fill:white,stroke:#30638E,stroke-dasharray:10,stroke-width:3px;
+  style G4a fill:white,stroke-dasharray:5;
+  style G4b fill:white,stroke-dasharray:5;
+  style G4c fill:white,stroke-dasharray:5;
 %% interactions
+  click I1 "#cloud-catalog"
+  click P1 "#static-site-generator"
+  click P2 "#json-generator"
+  click O1 "#html-content"
+  click O2 "#json-data"
   click G5 "#backend"
   click G6 "#frontend"
 ```
@@ -263,9 +283,24 @@ flowchart TD
   I2 -->|call| G8a
   G7a -->|update| O1
   G8a -->|query| O1
+%% styles
+  classDef clickable fill:#3176d9,color:white
+  style G1 fill:white,stroke-dasharray:5;
+  style G3 fill:white,stroke-dasharray:5;
+  style G4 fill:white,stroke-dasharray:5;
+  style G5 fill:white,stroke:#30638E,stroke-dasharray:10,stroke-width:3px;
+  style G6 fill:white,stroke-dasharray:5;
+  style G7 fill:white,stroke-dasharray:5;
+  style G8 fill:white,stroke-dasharray:5;
+  style O1 fill:#61affe,stroke:white
 %% interactions
   click G4 "#community-data"
   click G6 "#frontend"
+  click O1 "#datastore"
+  click I1 "#storage"
+  click I2 "#api-gateway"
+  click G7a "#state-machine"
+  click G8a "#functions"
 ```
 
 ### Frontend
@@ -308,6 +343,11 @@ flowchart TD
   G4 -->|populates| G5
   G4 -->|populates| G6
   G2 -->|leverage| G5
+%% styles
+  classDef clickable fill:#3176d9,color:white
+  style G1 fill:white,stroke-dasharray:5;
+  style G3 fill:white,stroke-dasharray:5;
+  style G6 fill:white,stroke:#30638E,stroke-dasharray:10,stroke-width:3px;
 %% interactions
   click G4 "#community-data"
   click O1 "#website"
@@ -327,6 +367,8 @@ flowchart LR
     C1
   end
 %% relationships
+%% styles
+  classDef clickable fill:#3176d9,color:white
 %% interactions
   click C1 href "https://www.github.com/lexical-cloud/lexical-cloud-docs" _blank
 ```
@@ -349,6 +391,8 @@ flowchart LR
   C1 -->|input| C2
   C2 ---|base theme| C3
   C2 -->|output| C4
+%% styles
+  classDef clickable fill:#3176d9,color:white
 %% interactions
   click C1 href "https://www.github.com/lexical-cloud/lexical-cloud-docs" _blank
   click C2 href "https://www.github.com/lexical-cloud/lexical-cloud-docs-hugo" _blank
@@ -367,6 +411,8 @@ flowchart LR
     C1
   end
 %% relationships
+%% styles
+  classDef clickable fill:#3176d9,color:white
 %% interactions
   click C1 href "https://www.github.com/lexical-cloud/lexical-cloud.github.io" _blank
 ```
@@ -384,6 +430,8 @@ flowchart LR
   end
 %% relationships
   C1 -->|serve| C2
+%% styles
+  classDef clickable fill:#3176d9,color:white
 %% interactions
   click C2 href "https://www.github.com/lexical-cloud/lexical-cloud.github.io" _blank
 ```
@@ -406,6 +454,8 @@ flowchart LR
   C1 -->|input| C2
   C2 ---|base theme| C3
   C2 -->|output| C4
+%% styles
+  classDef clickable fill:#3176d9,color:white
 %% interactions
   click C1 href "https://www.github.com/lexical-cloud/lexical-cloud-docs" _blank
   click C2 href "https://www.github.com/lexical-cloud/lexical-cloud-data-hugo" _blank
@@ -424,6 +474,8 @@ flowchart LR
     C1
   end
 %% relationships
+%% styles
+  classDef clickable fill:#3176d9,color:white
 %% interactions
   click C1 href "https://www.github.com/lexical-cloud/lexical-cloud-data" _blank
 ```
@@ -444,7 +496,7 @@ TODO
 
 TODO
 
-### Data Store
+### Datastore
 
 TODO
 
