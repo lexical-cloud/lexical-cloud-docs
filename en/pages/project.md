@@ -60,8 +60,9 @@ flowchart TD
   U1 -->|explore| G2
   U2 -->|maintain| G2
 %% styles
-  style G1 fill:white,stroke-dasharray:5;
   classDef clickable fill:#3176d9,color:white
+  classDef cluster fill:white
+  style G1 stroke-dasharray:5
 %% interactions
   click G2 "#lexicalcloud"
 ```
@@ -114,8 +115,9 @@ flowchart TD
   G2 -->|leverage| G5
 %% styles
   classDef clickable fill:#3176d9,color:white
-  style G1 fill:white,stroke-dasharray:5;
-  style G3 fill:white,stroke:#30638E,stroke-dasharray:10,stroke-width:3px;
+  classDef cluster fill:white
+  style G1 stroke-dasharray:5
+  style G3 stroke:#30638E,stroke-dasharray:10,stroke-width:3px
 %% interactions
   click G4 "#community-data"
   click G5 "#backend"
@@ -198,12 +200,13 @@ flowchart TD
   I1 -->|feeds| P2 -->|produces| O2
 %% styles
   classDef clickable fill:#3176d9,color:white
-  style G1 fill:white,stroke-dasharray:5;
-  style G3 fill:white,stroke-dasharray:5;
-  style G4 fill:white,stroke:#30638E,stroke-dasharray:10,stroke-width:3px;
-  style G4a fill:white,stroke-dasharray:5;
-  style G4b fill:white,stroke-dasharray:5;
-  style G4c fill:white,stroke-dasharray:5;
+  classDef cluster fill:white
+  style G1 stroke-dasharray:5
+  style G3 stroke-dasharray:5
+  style G4 stroke:#30638E,stroke-dasharray:10,stroke-width:3px
+  style G4a stroke-dasharray:5
+  style G4b stroke-dasharray:5
+  style G4c stroke-dasharray:5
 %% interactions
   click I1 "#cloud-catalog"
   click P1 "#static-site-generator"
@@ -217,7 +220,7 @@ flowchart TD
 ### Backend
 
 Given `Lexical.cloud` `backend` begins `ingestion` with `storage` \
-when `community data` is sent to _stage_ in `storage` \
+when `community data`_populates_ backend `storage` \
 then data in `storage` is ready to _process_ by the `state machine`.
 
 Given `Lexical.cloud` `backend` persist state in a `datastore` \
@@ -276,8 +279,8 @@ flowchart TD
   U1 -->|explore| G6
   U2 -->|maintain| G4
   U3 -->|develop| G2
-  G4 -->|stage| G7
-  G4 -->|publish| G6
+  G4 -->|populates| G7
+  G4 -->|populates| G6
   G2 -->|leverage| G8
   I1 -->|process| G7a
   I2 -->|call| G8a
@@ -285,14 +288,15 @@ flowchart TD
   G8a -->|query| O1
 %% styles
   classDef clickable fill:#3176d9,color:white
-  style G1 fill:white,stroke-dasharray:5;
-  style G3 fill:white,stroke-dasharray:5;
-  style G4 fill:white,stroke-dasharray:5;
-  style G5 fill:white,stroke:#30638E,stroke-dasharray:10,stroke-width:3px;
-  style G6 fill:white,stroke-dasharray:5;
-  style G7 fill:white,stroke-dasharray:5;
-  style G8 fill:white,stroke-dasharray:5;
-  style O1 fill:#61affe,stroke:white
+  classDef cluster fill:white
+  style G1 stroke-dasharray:5
+  style G3 stroke-dasharray:5
+  style G4 stroke-dasharray:5
+  style G5 stroke:#30638E,stroke-dasharray:10,stroke-width:3px
+  style G6 stroke-dasharray:5
+  style G7 stroke-dasharray:5
+  style G8 stroke-dasharray:5
+  style O1 stroke:white
 %% interactions
   click G4 "#community-data"
   click G6 "#frontend"
@@ -345,9 +349,10 @@ flowchart TD
   G2 -->|leverage| G5
 %% styles
   classDef clickable fill:#3176d9,color:white
-  style G1 fill:white,stroke-dasharray:5;
-  style G3 fill:white,stroke-dasharray:5;
-  style G6 fill:white,stroke:#30638E,stroke-dasharray:10,stroke-width:3px;
+  classDef cluster fill:white
+  style G1 stroke-dasharray:5
+  style G3 stroke-dasharray:5
+  style G6 stroke:#30638E,stroke-dasharray:10,stroke-width:3px
 %% interactions
   click G4 "#community-data"
   click O1 "#website"
@@ -357,6 +362,9 @@ flowchart TD
 
 ### Cloud Catalog
 
+The `cloud catalog` consist of the repository found at [`lexical-cloud-docs`](https://www.github.com/lexical-cloud/lexical-cloud-docs).
+It has no dependencies and serves as the root data source for this project.
+Details of this content are discussed in [Data Model](pages/data-model/).
 
 ```mermaid
 flowchart LR
@@ -369,11 +377,18 @@ flowchart LR
 %% relationships
 %% styles
   classDef clickable fill:#3176d9,color:white
+  classDef cluster fill:white
+  style G1 stroke:#30638E,stroke-width:3px
 %% interactions
   click C1 href "https://www.github.com/lexical-cloud/lexical-cloud-docs" _blank
 ```
 
 ### Static Site Generator
+
+The `static site generator` consist of the repository found at [`lexical-cloud-docs-hugo`](https://www.github.com/lexical-cloud/lexical-cloud-docs-hugo).
+It is built on a customized [`docsy`](https://www.github.com/lexical-cloud/docsy) theme for [hugo](https://gohugo.io/).
+It processes data from the `cloud catalog` to produce `html content`. 
+
 
 ```mermaid
 flowchart LR
@@ -387,12 +402,20 @@ flowchart LR
     C2
     C3
   end
+  subgraph G2["fa:fa-table Cloud Catalog"]
+    C1
+  end
+  subgraph G3["fa:fa-code HTML Content"]
+    C4
+  end
 %% relationships
   C1 -->|input| C2
   C2 ---|base theme| C3
   C2 -->|output| C4
 %% styles
   classDef clickable fill:#3176d9,color:white
+  classDef cluster fill:white
+  style G1 stroke:#30638E,stroke-width:3px
 %% interactions
   click C1 href "https://www.github.com/lexical-cloud/lexical-cloud-docs" _blank
   click C2 href "https://www.github.com/lexical-cloud/lexical-cloud-docs-hugo" _blank
@@ -401,6 +424,9 @@ flowchart LR
 ```
 
 ### HTML Content
+
+The `html content` consist of the repository found at [`lexical-cloud.github.io`](https://www.github.com/lexical-cloud/lexical-cloud.github.io).
+It has no dependencies and serves as the basis for this website.
 
 ```mermaid
 flowchart LR
@@ -413,11 +439,15 @@ flowchart LR
 %% relationships
 %% styles
   classDef clickable fill:#3176d9,color:white
+  classDef cluster fill:white
+  style G1 stroke:#30638E,stroke-width:3px
 %% interactions
   click C1 href "https://www.github.com/lexical-cloud/lexical-cloud.github.io" _blank
 ```
 
 ### Website
+
+The `website` is the `html content` generated by the `static site generator`. This content is served by Github Pages.
 
 ```mermaid
 flowchart LR
@@ -428,15 +458,24 @@ flowchart LR
   subgraph G1["fa:fa-code Website"]
     C1
   end
+  subgraph G2["fa:fa-code HTML Content"]
+    C2
+  end
 %% relationships
   C1 -->|serve| C2
 %% styles
   classDef clickable fill:#3176d9,color:white
+  classDef cluster fill:white
+  style G1 stroke:#30638E,stroke-width:3px
 %% interactions
   click C2 href "https://www.github.com/lexical-cloud/lexical-cloud.github.io" _blank
 ```
 
 ### JSON Generator
+
+The `json generator` consist of the repository found at [`lexical-cloud-data-hugo`](https://www.github.com/lexical-cloud/lexical-cloud-data-hugo).
+It is built on a customized [`docsy`](https://www.github.com/lexical-cloud/docsy) theme for [hugo](https://gohugo.io/).
+It processes data from the `cloud catalog` to produce `json data`. 
 
 ```mermaid
 flowchart LR
@@ -450,12 +489,20 @@ flowchart LR
     C2
     C3
   end
+  subgraph G2["fa:fa-table Cloud Catalog"]
+    C1
+  end
+  subgraph G3["fa:fa-code JSON Data"]
+    C4
+  end
 %% relationships
   C1 -->|input| C2
   C2 ---|base theme| C3
   C2 -->|output| C4
 %% styles
   classDef clickable fill:#3176d9,color:white
+  classDef cluster fill:white
+  style G1 stroke:#30638E,stroke-width:3px
 %% interactions
   click C1 href "https://www.github.com/lexical-cloud/lexical-cloud-docs" _blank
   click C2 href "https://www.github.com/lexical-cloud/lexical-cloud-data-hugo" _blank
@@ -464,6 +511,9 @@ flowchart LR
 ```
 
 ### JSON Data
+
+The `json data` consist of the repository found at [`lexical-cloud.github.io`](https://www.github.com/lexical-cloud/lexical-cloud-data).
+It has no dependencies and is source for data ingestion to the backend.
 
 ```mermaid
 flowchart LR
@@ -476,6 +526,7 @@ flowchart LR
 %% relationships
 %% styles
   classDef clickable fill:#3176d9,color:white
+  style G1 stroke:#30638E,stroke-width:3px
 %% interactions
   click C1 href "https://www.github.com/lexical-cloud/lexical-cloud-data" _blank
 ```
