@@ -235,7 +235,7 @@ and the `functions` will _query_ the `datastore`.
 ```mermaid
 flowchart TD
 %% entities
-  U1["fa:fa-users Consumers"]
+  %%U1["fa:fa-users Consumers"]
   U2["fa:fa-users Contributors"]
   U3["fa:fa-users Creators"]
   I1["fa:fa-floppy-disk Storage"]
@@ -243,7 +243,7 @@ flowchart TD
   O1["fa:fa-database Datastore"]
 %% groups
   subgraph G1["fa:fa-users Users"]
-    U1
+    %%U1
     U2
     U3
   end
@@ -252,7 +252,7 @@ flowchart TD
   subgraph G3["fa:fa-cloud Lexical.cloud"]
     G4
     G5
-    G6
+    %%G6
   end
   subgraph G4["fa:fa-database Community Data"]
   end
@@ -261,8 +261,8 @@ flowchart TD
     G8
     O1
   end
-  subgraph G6["fa:fa-cloud Frontend"]
-  end
+  %%subgraph G6["fa:fa-cloud Frontend"]
+  %%end
   subgraph G7["Ingestion"]
     I1
     G7a
@@ -276,11 +276,11 @@ flowchart TD
   subgraph G8a["Functions"]
   end
 %% relationships
-  U1 -->|explore| G6
+  %%U1 -->|explore| G6
   U2 -->|maintain| G4
   U3 -->|develop| G2
   G4 -->|populates| G7
-  G4 -->|populates| G6
+  %%G4 -->|populates| G6
   G2 -->|leverage| G8
   I1 -->|process| G7a
   I2 -->|call| G8a
@@ -293,13 +293,13 @@ flowchart TD
   style G3 stroke-dasharray:5
   style G4 stroke-dasharray:5
   style G5 stroke:#30638E,stroke-dasharray:10,stroke-width:3px
-  style G6 stroke-dasharray:5
+  %%style G6 stroke-dasharray:5
   style G7 stroke-dasharray:5
   style G8 stroke-dasharray:5
   style O1 stroke:white
 %% interactions
   click G4 "#community-data"
-  click G6 "#frontend"
+  %%click G6 "#frontend"
   click O1 "#datastore"
   click I1 "#storage"
   click I2 "#api-gateway"
@@ -318,35 +318,35 @@ flowchart TD
 %% entities
   U1["fa:fa-users Consumers"]
   U2["fa:fa-users Contributors"]
-  U3["fa:fa-users Creators"]
+  %%U3["fa:fa-users Creators"]
   O1["fa:fa-globe Website"]
 %% groups
   subgraph G1["fa:fa-users Users"]
     U1
     U2
-    U3
+    %%U3
   end
-  subgraph G2["fa:fa-box Apps"]
-  end
+  %%subgraph G2["fa:fa-box Apps"]
+  %%end
   subgraph G3["fa:fa-cloud Lexical.cloud"]
     G4
-    G5
+    %%G5
     G6
   end
   subgraph G4["fa:fa-database Community Data"]
   end
-  subgraph G5["fa:fa-cloud Backend"]
-  end
+  %%subgraph G5["fa:fa-cloud Backend"]
+  %%end
   subgraph G6["fa:fa-cloud Frontend"]
     O1
   end
 %% relationships
   U1 -->|explore| O1 
   U2 -->|maintain| G4 
-  U3 -->|develop| G2
-  G4 -->|populates| G5
+  %%U3 -->|develop| G2
+  %%G4 -->|populates| G5
   G4 -->|populates| G6
-  G2 -->|leverage| G5
+  %%G2 -->|leverage| G5
 %% styles
   classDef clickable fill:#3176d9,color:white
   classDef cluster fill:white
