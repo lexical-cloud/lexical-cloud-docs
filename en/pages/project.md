@@ -366,7 +366,7 @@ Given the `cloud catalog` consist of the repository at [`lexical-cloud-docs`](ht
 and `lexical-cloud-docs` has a `GitHub Action` that triggers on merge completion \
 when `contributors` _merge_ content into `lexical-cloud-docs` \
 then a `Github Action` sends the catalog as _input_ to `static site generator` \
-and a `Github Action` sends the catalog as _input_ to `json generator generator`.
+and a `Github Action` sends the catalog as _input_ to `json generator`.
 
 ```mermaid
 flowchart LR
@@ -374,24 +374,28 @@ flowchart LR
   U1["fa:fa-users Contributors"]
   C1["fab:fa-github lexical-cloud-docs"]
   C2["fab:fa-github Github Action"]
-  O1["fa:fa-code Static Site Generator"]
-  O2["fa:fa-code JSON Data Generator"]
 %% groups
   subgraph G1["fa:fa-table Cloud Catalog"]
     C1
     C2
   end
+  subgraph G2["fa:fa-code Static Site Generator"]
+  end
+  subgraph G3["fa:fa-code JSON Generator"]
+  end
 %% relationships
   U1 -->|merge| C1
   C1 -->|trigger| C2
-  C2 -->|input| O1
-  C2 -->|input| O2 
+  C2 -->|input| G2
+  C2 -->|input| G3 
 %% styles
   classDef clickable fill:#3176d9,color:white
   classDef cluster fill:white
   style G1 stroke:#30638E,stroke-width:3px
 %% interactions
   click C1 href "https://www.github.com/lexical-cloud/lexical-cloud-docs" _blank
+  click G2 "#static-site-generator"
+  click G3 "#json-generator"
 ```
 _TODO: Github Action_
 
@@ -426,10 +430,10 @@ flowchart LR
   classDef cluster fill:white
   style G1 stroke:#30638E,stroke-width:3px
 %% interactions
-  click C1 href "https://www.github.com/lexical-cloud/lexical-cloud-docs" _blank
-  click C2 href "https://www.github.com/lexical-cloud/lexical-cloud-docs-hugo" _blank
-  click C3 href "https://www.github.com/lexical-cloud/docsy" _blank
-  click C4 href "https://www.github.com/lexical-cloud/lexical-cloud.github.io" _blank
+  click C1 href "https://www.github.com/lexical-cloud/lexical-cloud-docs-hugo" _blank
+  click C2 href "https://www.github.com/lexical-cloud/docsy" _blank
+  click G2 "#cloud-catalog"
+  click G3 "#html-content"
 ```
 
 ### HTML Content
@@ -459,6 +463,8 @@ flowchart LR
   style G1 stroke:#30638E,stroke-width:3px
 %% interactions
   click C1 href "https://www.github.com/lexical-cloud/lexical-cloud.github.io" _blank
+  click G2 "#static-site-generator"
+  click G3 "#website"
 ```
 
 ### Website
@@ -487,6 +493,7 @@ flowchart LR
   style G1 stroke:#30638E,stroke-width:3px
 %% interactions
   click C2 href "https://www.github.com/lexical-cloud/lexical-cloud.github.io" _blank
+  click G2 "#html-content"
 ```
 
 ### JSON Generator
@@ -521,6 +528,8 @@ flowchart LR
 %% interactions
   click C1 href "https://www.github.com/lexical-cloud/lexical-cloud-data-hugo" _blank
   click C2 href "https://www.github.com/lexical-cloud/docsy" _blank
+  click G2 "#cloud-catalog"
+  click G3 "#json-data"
 ```
 
 ### JSON Data
@@ -552,6 +561,7 @@ flowchart LR
   style G2 stroke:#30638E,stroke-width:3px
 %% interactions
   click C1 href "https://www.github.com/lexical-cloud/lexical-cloud-data" _blank
+  click G1 "#json-generator"
 ```
 _TODO: Github Action_
 
