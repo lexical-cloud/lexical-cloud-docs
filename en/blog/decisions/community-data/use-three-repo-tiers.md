@@ -11,5 +11,5 @@ we decided to link input and output as submodules on transformation repos  \
 and against using a single repo for all transformations
 
 to achieve separation between many future transformations \
-and simplicity for contributors to the source data \
+and simplicity for contributors to the source data, \
 accepting some duplication in overhead between repos.
