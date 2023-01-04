@@ -71,14 +71,14 @@ flowchart TD
 
 Given `Lexical.cloud` is a `community data` project \
 when `contributors` _maintain_ the `community data` \
-then `community data` _feeds_ the `frontend` and `backend`.
+then `community data` _populates_ the `frontend` and `backend`.
 
 Given `Lexical.cloud` exposes data in a `backend` \
-when `community data` _feeds_ into the `backend` \
+when `community data` _populates_ the `backend` \
 then `apps` can _leverage_ the `backend`.
 
 Given `Lexical.cloud` needs a `frontend` to display data \
-when `community data` _feeds_ into the `frontend` \
+when `community data` _populates_ the `frontend` \
 then `consumers` can _explore_ the `frontend`.
 
 ```mermaid
@@ -110,8 +110,8 @@ flowchart TD
   U1 -->|explore| G6
   U2 -->|maintain| G4 
   U3 -->|develop| G2
-  G4 -->|feeds| G5
-  G4 -->|feeds| G6
+  G4 -->|populates| G5
+  G4 -->|populates| G6
   G2 -->|leverage| G5
 %% styles
   classDef clickable fill:#3176d9,color:white
@@ -127,22 +127,23 @@ flowchart TD
 ## Containers
 
 ### Community Data
+**DIAGRAM** | [**DECISION LOG**](/blog/decisions/community-data)
 
-Given `Lexical.cloud` `community data` `sources` \
+Given `Lexical.cloud` `community data` `sources`
 include a `cloud catalog` \
 when `contributors` _maintain_ the `cloud catalog` \
 then the `cloud catalog` _feeds_ many `transforms`.
 
-Given `Lexical.cloud` `community data` `tranforms` \
+Given `Lexical.cloud` `community data` `tranforms`
 include a `static site generator` \
 when the `static site generator` _produces_ `html content` \
 then the `html content` _populates_ the `frontend` \
-and `consumers` can _explore_ that content on the `website`.
+and `consumers` can _explore_ that content on the `frontend`.
 
-Given `Lexical.cloud` `community data` `tranforms` \
+Given `Lexical.cloud` `community data` `tranforms`
 include a `json generator` \
 when the `json generator` _produces_ the `json data` \
-then the `json data` _populates_ updates to the `backend` \
+then the `json data` _populates_ the `backend` \
 and `apps` _leverage_ services on the `backend`.
 
 ```mermaid
@@ -218,6 +219,7 @@ flowchart TD
 ```
 
 ### Backend
+**DIAGRAM** | [**DECISION LOG**](/blog/decisions/backend)
 
 Given `Lexical.cloud` `backend` begins `ingestion` with `storage` \
 when `community data`_populates_ backend `storage` \
@@ -229,8 +231,8 @@ then the `state machine` will _update_ the `datastore`.
 
 Given `Lexical.cloud` `backend` `api` is fronted by an `api gateway` \
 when `apps` _leverage_ the `api` \
-then the `api gateway` will _call_ `functions` \
-and the `functions` will _query_ the `datastore`.
+then the `api gateway` will _call_ `endpoints` \
+and the `endpoints` will _query_ the `datastore`.
 
 ```mermaid
 flowchart TD
@@ -273,7 +275,7 @@ flowchart TD
     I2
     G8a
   end
-  subgraph G8a["Functions"]
+  subgraph G8a["Endpoints"]
   end
 %% relationships
   %%U1 -->|explore| G6
@@ -304,10 +306,11 @@ flowchart TD
   click I1 "#storage"
   click I2 "#api-gateway"
   click G7a "#state-machine"
-  click G8a "#functions"
+  click G8a "#endpoints"
 ```
 
 ### Frontend
+**DIAGRAM** | [**DECISION LOG**](/blog/decisions/frontend)
 
 Given `Lexical.cloud` `frontend` includes a `website` \
 when `community data` _populates_ the `frontend` \
@@ -361,9 +364,10 @@ flowchart TD
 ## Components
 
 ### Cloud Catalog
+**DIAGRAM** | [**DECISION LOG**](/blog/decisions/cloud-catalog) | [**CODE REPOSITORY**](https://www.github.com/lexical-cloud/lexical-cloud-docs)
 
 Given the `cloud catalog` consist of the repository at [`lexical-cloud-docs`](https://www.github.com/lexical-cloud/lexical-cloud-docs) \
-and `lexical-cloud-docs` has a `GitHub Action` that triggers on merge completion \
+and `lexical-cloud-docs` _trigger_ the `Github Action` on merge completion \
 when `contributors` _merge_ content into `lexical-cloud-docs` \
 then a `Github Action` sends the catalog as _input_ to `static site generator` \
 and a `Github Action` sends the catalog as _input_ to `json generator`.
@@ -400,6 +404,7 @@ flowchart LR
 _TODO: Github Action_
 
 ### Static Site Generator
+**DIAGRAM** | [**DECISION LOG**](/blog/decisions/static-site-generator) | [**CODE REPOSITORY**](https://www.github.com/lexical-cloud/lexical-cloud-docs-hugo)
 
 Given the `static site generator` consist of the repository at [`lexical-cloud-docs-hugo`](https://www.github.com/lexical-cloud/lexical-cloud-docs-hugo) \
 and `lexical-cloud-docs-hugo` has a _base theme_ of [`docsy`](https://www.github.com/lexical-cloud/docsy) for [hugo](https://gohugo.io/) \
@@ -437,6 +442,7 @@ flowchart LR
 ```
 
 ### HTML Content
+**DIAGRAM** | [**DECISION LOG**](/blog/decisions/html-content) | [**CODE REPOSITORY**](https://www.github.com/lexical-cloud/lexical-cloud.github.io)
 
 Given the `html content` consist of the repository at [`lexical-cloud.github.io`](https://www.github.com/lexical-cloud/lexical-cloud.github.io) \
 when the `static site generator` sends _output_ to `lexical-cloud.github.io` \
@@ -468,6 +474,7 @@ flowchart LR
 ```
 
 ### Website
+**DIAGRAM** | [**DECISION LOG**](/blog/decisions/website) | [**CODE REPOSITORY**](https://www.github.com/lexical-cloud/lexical-cloud.github.io)
 
 Given the `website` is hosted on `Github Pages` \
 when `consumers` _explore_ the `website` \
@@ -497,10 +504,11 @@ flowchart LR
 ```
 
 ### JSON Generator
+**DIAGRAM** | [**DECISION LOG**](/blog/decisions/json-generator) | [**CODE REPOSITORY**](https://www.github.com/lexical-cloud/lexical-cloud-data-hugo)
 
 Given `json generator` consist of the repository at [`lexical-cloud-data-hugo`](https://www.github.com/lexical-cloud/lexical-cloud-data-hugo) \
 and `lexical-cloud-data-hugo` has a `base theme` of [`docsy`](https://www.github.com/lexical-cloud/docsy) for [hugo](https://gohugo.io/) \
-when `lexical-cloud-docs` is _input_ to `lexical-cloud-data-hugo` \
+when the `cloud catalog` is _input_ to `lexical-cloud-data-hugo` \
 then `lexical-cloud-data-hugo` sends _output_ to `lexical-cloud-data`.
 
 ```mermaid
@@ -533,6 +541,7 @@ flowchart LR
 ```
 
 ### JSON Data
+**DIAGRAM** | [**DECISION LOG**](/blog/decisions/json-data) | [**CODE REPOSITORY**](https://www.github.com/lexical-cloud/lexical-cloud-data)
 
 Given the `json data` consist of the repository at [`lexical-cloud-data`](https://www.github.com/lexical-cloud/lexical-cloud-data) \
 and `lexical-cloud-data` has a `Github Action` that executes on merge completion \
@@ -569,7 +578,7 @@ _TODO: Github Action_
 
 _TODO_
 
-### Functions
+### Endpoints
 
 _TODO_
 
