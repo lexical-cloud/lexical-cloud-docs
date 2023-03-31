@@ -4,6 +4,7 @@ services:
 providers:
   - "aws"
 domains:
+  - "observability"
   - "systems management"
 categories:
   - "application debugger"

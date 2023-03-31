@@ -8,6 +8,8 @@ domains:
   - "big data"
 categories:
   - "dashboards"
+features:
+  - "semantic"
 title: "Google Cloud Looker"
 linkTitle: "Google Cloud Looker"
 ---

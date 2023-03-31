@@ -9,6 +9,7 @@ domains:
 categories:
   - "nosql db"
   - "key-value store"
+  - "wide-column store"
 title: "Google Cloud Bigtable"
 linkTitle: "Google Cloud Bigtable"
 ---

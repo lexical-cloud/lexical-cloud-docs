@@ -2,7 +2,7 @@
 services:
   - "integration"
 providers:
-  - "gcp"
+  - "aws"
 domains:
   - "managed service"
   - "process modeling"
@@ -11,6 +11,7 @@ categories:
   - "workflow engine"
 features:
   - "apache airflow"
-title: "Google Cloud Composer"
-linkTitle: "Google Cloud Composer"
+labels:
+title: "Amazon Managed Workflows for Apache Airflow (MWAA)"
+linkTitle: "Amazon MWAA"
 ---
