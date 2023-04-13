@@ -2,13 +2,15 @@
 services:
   - "analytics"
 providers:
-  - "azure"
+  - "aws"
 domains:
   - "big data"
+  - "managed service"
+  - "serverless"
 categories:
   - "data processing"
 features:
-  - "apache spark"
-title: "Azure Databricks"
-linkTitle: "Azure Databricks"
+  - "scale-to-zero"
+title: "Amazon EMR"
+linkTitle: "Amazon EMR"
 ---

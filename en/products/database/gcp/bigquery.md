@@ -12,6 +12,7 @@ categories:
   - "data warehousing"
   - "unstructured data"
   - "sql compliant"
+  - "column-oriented db"
 title: "Google Cloud BigQuery"
 linkTitle: "Google Cloud BigQuery"
 ---

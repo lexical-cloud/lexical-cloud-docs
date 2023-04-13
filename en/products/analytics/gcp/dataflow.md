@@ -1,6 +1,6 @@
 ---
 services:
-  - "integration"
+  - "analytics"
 providers:
   - "gcp"
 domains:
@@ -8,6 +8,9 @@ domains:
   - "serverless"
 categories:
   - "data streaming"
+  - "data processing"
+features:
+  - "apache beam"
 title: "Google Cloud Dataflow"
 linkTitle: "Google Cloud Dataflow"
 ---
