@@ -1,7 +1,7 @@
 ---
 features: 
   - "transient state"
-  - "atleast once execution"
+  - "at least once execution"
   - "execution based pricing"
   - "short duration"
 title: "Step Functions State Machine (Express)"
