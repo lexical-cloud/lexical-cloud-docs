@@ -5,9 +5,9 @@ providers:
   - "aws"
 domains:
   - "data integration"
-  - "data transfer"
 categories:
   - "saas"
+  - "data transfer"
 title: "Amazon AppFlow"
 linkTitle: "Amazon AppFlow"
 ---
