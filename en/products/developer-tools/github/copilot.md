@@ -7,6 +7,8 @@ providers:
 domains:
   - "developer toolchain"
   - "generative ai"
+categories:
+  - "coding assistant"
 title: "GitHub Copilot"
 linkTitle: "Github Copilot"
 ---
