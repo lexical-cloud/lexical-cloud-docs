@@ -2,12 +2,12 @@
 services:
   - "ai"
 providers:
-  - "aws"
+  - "azure"
 domains:
   - "machine learning"
 categories:
   - "foundation models"
   - "generative ai"
-title: "Amazon Bedrock"
-linkTitle: "Amazon Bedrock"
+title: "Azure OpenAI Service"
+linkTitle: "Azure OpenAI Service"
 ---
