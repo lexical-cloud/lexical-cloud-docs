@@ -12,6 +12,7 @@ categories:
 features:
   - "mysql"
   - "postgresql"
+  - "postgis"
   - "mariadb"
   - "sql server"
   - "oracle"

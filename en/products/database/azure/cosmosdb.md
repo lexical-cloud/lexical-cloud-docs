@@ -12,6 +12,8 @@ categories:
   - "nosql db"
   - "column-oriented db"
   - "wide-column db"
+features:
+  - "geospatial"
 title: "Azure Cosmos DB"
 linkTitle: "Azure Cosmos DB"
 ---
