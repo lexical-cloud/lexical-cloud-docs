@@ -24,6 +24,7 @@ Contributions from the community are welcome.
  * GitHub and associated products are trademarks of GitHub, Inc.
  * Google, Google Cloud, and associated products are trademarks of Google LLC.
  * Microsoft Azure and associated products are trademarks of the Microsoft group of companies.
+ * ESRI, ArcGIS, and associated products are trademarks of Environmental Systems Research Institute, Inc. (Esri).
  * Wikipedia is a registered trademark of the Wikimedia Foundation, Inc., a non-profit organization.
  * Apache projects are trademarks of the Apache Software Foundation.
 
