@@ -8,6 +8,7 @@ domains:
   - "serverless"
 categories:
   - "datasets"
+  - "data integration"
 features:
   - "geospatial"
 title: "AWS Data Exchange"

@@ -6,7 +6,7 @@ providers:
 domains:
   - "data management"
 categories:
-  - "data registry"
+  - "datasets"
 features:
   - "open data"
   - "geospatial"
