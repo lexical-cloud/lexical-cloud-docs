@@ -10,6 +10,8 @@ domains:
 categories:
   - "relational db"
   - "sql compliant"
+features:
+  - "geospatial"
 title: "Azure SQL Database"
 linkTitle: "Azure SQL DB"
 ---

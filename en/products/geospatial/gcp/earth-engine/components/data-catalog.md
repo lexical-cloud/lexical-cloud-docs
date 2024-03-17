@@ -5,7 +5,7 @@ domains:
   - "data management"
 categories:
   - "datasets"
-title: "Microsoft Planetary Computer Data Catalog"
-linkTitle: "Data Catalog"
+title: "Google Earth Engine Data Catalog"
+linkTitle: "Earth Engine Catalog"
 productHierarchyTier: "component"
 ---

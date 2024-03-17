@@ -2,12 +2,12 @@
 services:
   - "geospatial"
 providers:
-  - "azure"
+  - "esri"
 domains:
-  - "managed service"
+  - "end-user computing"
 categories:
   - "geospatial analysis"
   - "remote sensing"
-title: "Microsoft Planetary Computer"
-linkTitle: "Microsoft Planetary Computer"
+title: "ArcGIS Online"
+linkTitle: "ArcGIS Online"
 ---

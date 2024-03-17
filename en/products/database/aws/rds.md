@@ -16,6 +16,7 @@ features:
   - "mariadb"
   - "sql server"
   - "oracle"
+  - "geospatial"
 label:
   - "rds managed"
 title: "Amazon Relational Database Service"

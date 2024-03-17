@@ -10,6 +10,8 @@ domains:
 categories:
   - "relational db"
   - "sql compliant"
+features:
+  - "geospatial"
 title: "Azure SQL Managed Instance"
 linkTitle: "Azure SQL Managed Instance"
 ---

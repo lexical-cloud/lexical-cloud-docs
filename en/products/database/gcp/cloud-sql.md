@@ -12,7 +12,9 @@ categories:
 features:
   - "mysql"
   - "postgresql"
+  - "postgis"
   - "sql server"
+  - "geospatial"
 label:
   - "rds managed"
 title: "Google Cloud SQL"
