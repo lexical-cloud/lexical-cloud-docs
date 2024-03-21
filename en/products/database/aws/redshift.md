@@ -11,6 +11,8 @@ domains:
 categories:
   - "data warehousing"
   - "column-oriented db"
+features:
+  - "geospatial"
 title: "Amazon Redshift"
 linkTitle: "Amazon Redshift"
 ---

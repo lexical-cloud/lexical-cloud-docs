@@ -13,6 +13,8 @@ categories:
 features:
   - "mysql"
   - "postgresql"
+  - "postgis"
+  - "geospatial"
 label:
   - "rds managed"
   - "global scale"

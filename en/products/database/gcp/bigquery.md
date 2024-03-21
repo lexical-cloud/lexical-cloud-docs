@@ -13,6 +13,8 @@ categories:
   - "unstructured data"
   - "sql compliant"
   - "column-oriented db"
+features:
+  - "geospatial"
 title: "Google Cloud BigQuery"
 linkTitle: "Google Cloud BigQuery"
 ---

@@ -11,6 +11,8 @@ domains:
 categories:
   - "sql compliant"
   - "unstructured data"
+features:
+  - "geospatial"
 title: "Amazon Athena"
 linkTitle: "Amazon Athena"
 ---

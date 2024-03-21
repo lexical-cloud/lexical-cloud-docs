@@ -6,9 +6,9 @@ providers:
 domains:
   - "big data"
 categories:
-  - "data warehousing"
+  - "data insights"
 features:
   - "geospatial"
-title: "Azure Synapse Analytics"
-linkTitle: "Azure Synapse Analytics"
+title: "Azure Data Explorer"
+linkTitle: "Azure Data Explorer"
 ---

@@ -1,17 +1,16 @@
 ---
 services:
-  - "database"
+  - "data catalog"
 providers:
   - "aws"
 domains:
   - "data management"
   - "serverless"
 categories:
-  - "document db"
-  - "key-value store"
-  - "nosql db"
+  - "datasets"
+  - "data integration"
 features:
   - "geospatial"
-title: "Amazon DynamoDB"
-linkTitle: "Amazon DynamoDB"
+title: "AWS Data Exchange"
+linkTitle: "AWS Data Exchange"
 ---

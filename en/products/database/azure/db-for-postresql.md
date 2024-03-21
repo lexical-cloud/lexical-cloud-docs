@@ -11,6 +11,8 @@ categories:
   - "sql compliant"
 features:
   - "postgresql"
+  - "postgis"
+  - "geospatial"
 title: "Azure Database for PostgreSQL"
 linkTitle: "Azure Database for PostgreSQL"
 ---

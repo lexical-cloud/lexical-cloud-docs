@@ -12,9 +12,11 @@ categories:
 features:
   - "mysql"
   - "postgresql"
+  - "postgis"
   - "mariadb"
   - "sql server"
   - "oracle"
+  - "geospatial"
 label:
   - "rds managed"
 title: "Amazon Relational Database Service"
