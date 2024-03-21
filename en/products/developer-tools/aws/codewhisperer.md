@@ -6,7 +6,7 @@ providers:
 domains:
   - "developer toolchain"
 categories:
-  - "code analysis"
-title: "Amazon CodeGuru"
-linkTitle: "Amazon CodeGuru"
+  - "coding assistant"
+title: "Amazon CodeWhisperer"
+linkTitle: "Amazon CodeWhisperer"
 ---
